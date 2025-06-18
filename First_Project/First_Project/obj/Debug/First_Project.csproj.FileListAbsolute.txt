@@ -1,0 +1,7 @@
+C:\Users\soundhark\Documents\Project_C#\First_Project\First_Project\bin\Debug\First_Project.exe.config
+C:\Users\soundhark\Documents\Project_C#\First_Project\First_Project\bin\Debug\First_Project.exe
+C:\Users\soundhark\Documents\Project_C#\First_Project\First_Project\bin\Debug\First_Project.pdb
+C:\Users\soundhark\Documents\Project_C#\First_Project\First_Project\obj\Debug\First_Project.csproj.AssemblyReference.cache
+C:\Users\soundhark\Documents\Project_C#\First_Project\First_Project\obj\Debug\First_Project.csproj.CoreCompileInputs.cache
+C:\Users\soundhark\Documents\Project_C#\First_Project\First_Project\obj\Debug\First_Project.exe
+C:\Users\soundhark\Documents\Project_C#\First_Project\First_Project\obj\Debug\First_Project.pdb
