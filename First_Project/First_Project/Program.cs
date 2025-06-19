@@ -11,6 +11,7 @@ namespace First_Project
             Program own_class = new Program();
             own_class.CheckEqual();
             own_class.CheckPositive();
+            own_class.Arithmetic();
             
             
         }
@@ -43,8 +44,21 @@ namespace First_Project
             else
             {
                 Console.WriteLine($"{input_1} is a Negative Number");
-                Console.Read();
+             
             }
+        }
+         public void Arithmetic()
+        {
+            Console.WriteLine("Enter Input 1 : ");
+            int input_1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter Input 2 : ");
+            int input_2 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine($"Addition : {input_1 + input_1}");
+            Console.WriteLine($"Subraction : {input_1 - input_1}");
+            Console.WriteLine($"MultiPlication : {input_1 * input_1}");
+            Console.WriteLine($"Division : {input_1 / input_1}");
+            Console.Read();
+
         }
     }
 }
