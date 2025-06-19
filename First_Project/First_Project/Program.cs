@@ -9,10 +9,11 @@ namespace First_Project
 
 
             Program own_class = new Program();
-           /* own_class.CheckEqual();
+            own_class.CheckEqual();
             own_class.CheckPositive();
-            own_class.Arithmetic();*/
+            own_class.Arithmetic();
             own_class.MultipleTable();
+            own_class.Sum();
             
             
         }
@@ -71,7 +72,7 @@ namespace First_Project
             {
                 Console.WriteLine($"{i} * {input_1} = {i * input_1}");
             }
-            Console.Read();
+            
         }
 
         public void Sum()
@@ -89,6 +90,7 @@ namespace First_Project
             {
                 Console.WriteLine("Sum of two inputs : ", sum);
             }
+            Console.Read();
         }
     }
 }
