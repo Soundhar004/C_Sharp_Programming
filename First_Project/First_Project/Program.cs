@@ -9,9 +9,10 @@ namespace First_Project
 
 
             Program own_class = new Program();
-            own_class.CheckEqual();
+           /* own_class.CheckEqual();
             own_class.CheckPositive();
-            own_class.Arithmetic();
+            own_class.Arithmetic();*/
+            own_class.MultipleTable();
             
             
         }
@@ -57,8 +58,21 @@ namespace First_Project
             Console.WriteLine($"Subraction : {input_1 - input_1}");
             Console.WriteLine($"MultiPlication : {input_1 * input_1}");
             Console.WriteLine($"Division : {input_1 / input_1}");
-            Console.Read();
 
         }
+
+
+        public void MultipleTable()
+        {
+            int i;
+            Console.WriteLine("Enter Input 1 : ");
+            int input_1 = Convert.ToInt32(Console.ReadLine());
+            for (i = 0; i <= 50; i++)
+            {
+                Console.WriteLine($"{i} * {input_1} = {i * input_1}");
+            }
+            Console.Read();
+        }
+
     }
 }
