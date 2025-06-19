@@ -14,8 +14,9 @@ namespace First_Project
             own_class.Arithmetic();
             own_class.MultipleTable();
             own_class.Sum();
-            
-            
+          
+
+
         }
 
         public void CheckEqual()
@@ -88,7 +89,7 @@ namespace First_Project
             }
             else
             {
-                Console.WriteLine("Sum of two inputs : ", sum);
+                Console.WriteLine($"Sum of two inputs : {sum} ");
             }
             Console.Read();
         }
