@@ -74,5 +74,21 @@ namespace First_Project
             Console.Read();
         }
 
+        public void Sum()
+        {
+            Console.WriteLine("Enter Input 1 : ");
+            int input_1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter Input 2 : ");
+            int input_2 = Convert.ToInt32(Console.ReadLine());
+            int sum = input_1 + input_2;
+            if(input_1 == input_2)
+            {
+                Console.WriteLine($"Triple the sum, Inputs are same : {sum * 3}");
+            }
+            else
+            {
+                Console.WriteLine("Sum of two inputs : ", sum);
+            }
+        }
     }
 }
