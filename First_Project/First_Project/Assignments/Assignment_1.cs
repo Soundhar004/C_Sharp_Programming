@@ -1,20 +1,18 @@
 ﻿using System;
 
-namespace First_Project
+namespace First_Project.Assignments
 {
-    class Program
+    class Assignment_1
     {
 
         static void Main(string[] args)
         {
-
-            Program own_class = new Program();
+            Assignment_1 own_class = new Assignment_1();
             own_class.CheckEqual();
             own_class.CheckPositive();
             own_class.Arithmetic();
             own_class.MultipleTable();
             own_class.Sum();
-
         }
 
         public static void TwoInputs(out int input_1, out int input_2)
@@ -27,11 +25,7 @@ namespace First_Project
 
         public void CheckEqual()
         {
-            Program.TwoInputs(out int input_1, out int input_2);
-            Console.WriteLine("Enter Input 1 : ");
-            input_1 = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Enter Input 2 : ");
-            input_2 = Convert.ToInt32(Console.ReadLine());
+            Assignment_1.TwoInputs(out int input_1, out int input_2);
             if (input_1 == input_2)
             {
                 Console.WriteLine($"{input_1} and {input_2} are equal.");
@@ -39,10 +33,8 @@ namespace First_Project
             else
             {
                 Console.WriteLine($"{input_1} and {input_2} are not equal.");
-
             }
         }
-
 
         public void CheckPositive()
         {
@@ -55,22 +47,17 @@ namespace First_Project
             else
             {
                 Console.WriteLine($"{input_1} is a Negative Number");
-
             }
         }
+
         public void Arithmetic()
         {
-            Console.WriteLine("Enter Input 1 : ");
-            int input_1 = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Enter Input 2 : ");
-            int input_2 = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine($"Addition : {input_1 + input_1}");
-            Console.WriteLine($"Subraction : {input_1 - input_1}");
-            Console.WriteLine($"MultiPlication : {input_1 * input_1}");
-            Console.WriteLine($"Division : {input_1 / input_1}");
-
+            Assignment_1.TwoInputs(out int input_1, out int input_2);
+            Console.WriteLine($"Addition : {input_1 + input_2}");
+            Console.WriteLine($"Subraction : {input_1 - input_2}");
+            Console.WriteLine($"MultiPlication : {input_1 * input_2}");
+            Console.WriteLine($"Division : {input_1 / input_2}");
         }
-
 
         public void MultipleTable()
         {
@@ -81,15 +68,11 @@ namespace First_Project
             {
                 Console.WriteLine($"{i} * {input_1} = {i * input_1}");
             }
-
         }
 
         public void Sum()
         {
-            Console.WriteLine("Enter Input 1 : ");
-            int input_1 = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Enter Input 2 : ");
-            int input_2 = Convert.ToInt32(Console.ReadLine());
+            Assignment_1.TwoInputs(out int input_1, out int input_2);
             int sum = input_1 + input_2;
             if (input_1 == input_2)
             {
