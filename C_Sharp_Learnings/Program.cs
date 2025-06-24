@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 namespace C_Sharp_Learnings
 {
     class Program
-    {
+    {   
+        /* Call by Value*/
         public void ModifyValue(int x)
         {
             x = 10; // Only modifies the local copy
@@ -16,6 +17,8 @@ namespace C_Sharp_Learnings
         {
             x = 10; // Modifies the original variable
         }
+
+        /* Call by Reference*/
         public void Calculate(int a, int b, out int sum, out int product)
         {
             sum = a + b;       // Assigning values
