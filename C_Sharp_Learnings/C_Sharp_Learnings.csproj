@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>C_Sharp_Learnings.Assignments.Assignment_2</StartupObject>
+    <StartupObject>C_Sharp_Learnings.Crispy_CSharp.Ooops1</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Assignments\Assignment_1.cs" />
     <Compile Include="Assignments\Assignment_2.cs" />
+    <Compile Include="Crispy_CSharp\Oops1.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
