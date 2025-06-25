@@ -1,7 +1,7 @@
 C:\Users\soundhark\Documents\Project_C#\C_Sharp_Learnings\bin\Debug\C_Sharp_Learnings.exe.config
 C:\Users\soundhark\Documents\Project_C#\C_Sharp_Learnings\bin\Debug\C_Sharp_Learnings.exe
 C:\Users\soundhark\Documents\Project_C#\C_Sharp_Learnings\bin\Debug\C_Sharp_Learnings.pdb
-C:\Users\soundhark\Documents\Project_C#\C_Sharp_Learnings\obj\Debug\C_Sharp_Learnings.csproj.AssemblyReference.cache
 C:\Users\soundhark\Documents\Project_C#\C_Sharp_Learnings\obj\Debug\C_Sharp_Learnings.csproj.CoreCompileInputs.cache
 C:\Users\soundhark\Documents\Project_C#\C_Sharp_Learnings\obj\Debug\C_Sharp_Learnings.exe
 C:\Users\soundhark\Documents\Project_C#\C_Sharp_Learnings\obj\Debug\C_Sharp_Learnings.pdb
+C:\Users\soundhark\Documents\Project_C#\C_Sharp_Learnings\obj\Debug\C_Sharp_Learnings.csproj.AssemblyReference.cache

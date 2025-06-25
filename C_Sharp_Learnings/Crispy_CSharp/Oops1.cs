@@ -20,7 +20,6 @@ namespace C_Sharp_Learnings.Crispy_CSharp
             OverRiding2 obj2 = new OverRiding2();
             obj2.Multiple();
 
-
         }
     }
 
@@ -50,7 +49,6 @@ namespace C_Sharp_Learnings.Crispy_CSharp
         public virtual void Multiple()
         {
             GetValue(out int v1, out int v2);
-            /*int v1 = 10, v2 = 20;*/
             int v3 = v1 * v2;
             Console.WriteLine($"From Overriding : {v3}");
         }
@@ -62,7 +60,6 @@ namespace C_Sharp_Learnings.Crispy_CSharp
         public override void Multiple()
         {
             GetValue(out int v1, out int v2);
-            /*int v1 = 10, v2 = 20;*/
             int v3 = v1 * v2 * 2;
             Console.WriteLine($"From Overriding : {v3}");
             Console.Read();
