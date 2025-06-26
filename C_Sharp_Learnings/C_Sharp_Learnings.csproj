@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>C_Sharp_Learnings.Coding_Challenge.Coding_C1</StartupObject>
+    <StartupObject>C_Sharp_Learnings.Assignments.Student</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
