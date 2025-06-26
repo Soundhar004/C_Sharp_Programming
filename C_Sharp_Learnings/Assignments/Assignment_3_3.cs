@@ -8,7 +8,7 @@ namespace C_Sharp_Learnings.Assignments
 {
     class SaleDetails
     {
-        /*Data members*/
+       
         int Salesno, Productno, Price, dateofsale, Qnty, TotalAmount;
         public SaleDetails(int salesno, int pro_no, int price, int dateofsale, int qnty)
         {

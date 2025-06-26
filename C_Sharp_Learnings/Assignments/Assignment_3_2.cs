@@ -11,10 +11,7 @@ namespace C_Sharp_Learnings.Assignments
         public string stud_name,Class,branch;
         public int roll_no, sem,avg_marks;
         bool fail = false;
-       /* public Student(string stud_name, int roll_no, string Class, string branch, int sem)
-        {
-            Console.WriteLine(stud_name);
-        }*/
+       
 
         public void GetInfo(string info)
         {

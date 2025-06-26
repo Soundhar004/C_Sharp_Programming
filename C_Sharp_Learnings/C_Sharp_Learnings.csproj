@@ -46,7 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assignments\Assignment3_3.cs" />
+    <Compile Include="Assignments\Assignment_3_3.cs" />
     <Compile Include="Assignments\Assignment_1.cs" />
     <Compile Include="Assignments\Assignment_2.cs" />
     <Compile Include="Assignments\Assignment_3_1.cs" />
