@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>C_Sharp_Learnings.Assignments.Student</StartupObject>
+    <StartupObject>C_Sharp_Learnings.Assignments.SaleDetails</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assignments\Assignment3_3.cs" />
     <Compile Include="Assignments\Assignment_1.cs" />
     <Compile Include="Assignments\Assignment_2.cs" />
     <Compile Include="Assignments\Assignment_3_1.cs" />

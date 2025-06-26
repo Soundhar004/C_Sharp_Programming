@@ -52,10 +52,6 @@ namespace C_Sharp_Learnings.Assignments
                 {
                     this.fail = true;
                 }
-                else if (i >=35)
-                {
-                    this.fail = false;
-                }
             }
 
 
@@ -88,9 +84,8 @@ namespace C_Sharp_Learnings.Assignments
         {
            /* Console.WriteLine("Enter the name : ");
             string stud_name = Console.ReadLine();
-            Console.WriteLine("Enter the roll no : ");*/
-
-           /* string stud_name = Console.ReadLine();
+            Console.WriteLine("Enter the roll no : ");
+            string stud_name = Console.ReadLine();
             Console.WriteLine("Enter the class name : ");
             string stud_name = Console.ReadLine();
             Console.WriteLine("Enter the name : ");
