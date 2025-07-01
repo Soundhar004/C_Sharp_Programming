@@ -1,0 +1,10 @@
+C:\Users\soundhark\Documents\Project_C#\C_Sharp_Learnings\GUI_Projects\WF_Project_1\obj\Debug\WF_Project_1.csproj.AssemblyReference.cache
+C:\Users\soundhark\Documents\Project_C#\C_Sharp_Learnings\GUI_Projects\WF_Project_1\obj\Debug\WF_Project_1.Form1.resources
+C:\Users\soundhark\Documents\Project_C#\C_Sharp_Learnings\GUI_Projects\WF_Project_1\obj\Debug\WF_Project_1.Properties.Resources.resources
+C:\Users\soundhark\Documents\Project_C#\C_Sharp_Learnings\GUI_Projects\WF_Project_1\obj\Debug\WF_Project_1.csproj.GenerateResource.cache
+C:\Users\soundhark\Documents\Project_C#\C_Sharp_Learnings\GUI_Projects\WF_Project_1\obj\Debug\WF_Project_1.csproj.CoreCompileInputs.cache
+C:\Users\soundhark\Documents\Project_C#\C_Sharp_Learnings\GUI_Projects\WF_Project_1\bin\Debug\WF_Project_1.exe.config
+C:\Users\soundhark\Documents\Project_C#\C_Sharp_Learnings\GUI_Projects\WF_Project_1\bin\Debug\WF_Project_1.exe
+C:\Users\soundhark\Documents\Project_C#\C_Sharp_Learnings\GUI_Projects\WF_Project_1\bin\Debug\WF_Project_1.pdb
+C:\Users\soundhark\Documents\Project_C#\C_Sharp_Learnings\GUI_Projects\WF_Project_1\obj\Debug\WF_Project_1.exe
+C:\Users\soundhark\Documents\Project_C#\C_Sharp_Learnings\GUI_Projects\WF_Project_1\obj\Debug\WF_Project_1.pdb

@@ -100,7 +100,6 @@ namespace C_Sharp_Learnings.Assignments
                 else
                 {
                     break;
-                    a = 10;
                 }
                 Console.Read();
             }

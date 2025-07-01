@@ -10,6 +10,7 @@ namespace C_Sharp_Learnings.Coding_Challenge
     {
         public void RemoveChar()
         {
+
             Console.WriteLine("Enter the string : ");
             string str_val = Console.ReadLine();
             Console.WriteLine("Enter the index want to remove : ");
