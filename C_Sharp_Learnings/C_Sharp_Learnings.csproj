@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>C_Sharp_Learnings.Rough.Event_Handling.EventargDemo</StartupObject>
+    <StartupObject>C_Sharp_Learnings.Assignments.Assignment_4_2</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -51,6 +51,8 @@
     <Compile Include="Assignments\Assignment_2.cs" />
     <Compile Include="Assignments\Assignment_3_1.cs" />
     <Compile Include="Assignments\Assignment_3_2.cs" />
+    <Compile Include="Assignments\Assignment_4_1.cs" />
+    <Compile Include="Assignments\Assignment_4_2.cs" />
     <Compile Include="Coding_Challenge\Coding_C1.cs" />
     <Compile Include="Crispy_CSharp\Oops1.cs" />
     <Compile Include="Program.cs" />
@@ -58,6 +60,7 @@
     <Compile Include="Rough\ComparableDemo.cs" />
     <Compile Include="Rough\Deep_Rough\Practice_1.cs" />
     <Compile Include="Rough\Event_Handling.cs" />
+    <Compile Include="Rough\FileHandle_1.cs" />
     <Compile Include="Rough\IcompareDemo.cs" />
     <Compile Include="Rough\Rough_1.cs" />
   </ItemGroup>
