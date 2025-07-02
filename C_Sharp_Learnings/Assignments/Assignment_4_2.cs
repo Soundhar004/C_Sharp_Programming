@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 
 namespace C_Sharp_Learnings.Assignments
 {
-    // Step 1: Define the delegate
     public delegate void RingEventHandler();
-
-    // Step 2: MobilePhone class
     class MobilePhone
     {
         public event RingEventHandler OnRing;
@@ -21,7 +18,6 @@ namespace C_Sharp_Learnings.Assignments
         }
     }
 
-    // Step 3: Subscriber classes
     class RingtonePlayer
     {
         public void PlayRingtone()
@@ -45,8 +41,6 @@ namespace C_Sharp_Learnings.Assignments
             Console.WriteLine("📳 Phone is vibrating...");
         }
     }
-
-    // Step 4: Main method
     class Assignment_4_2
     {
         static void Main(string[] args)
