@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace C_Sharp_Learnings.Assignments
 {
+    //Assignment - 4, Question no - 2.
     class Employee
     {
         public int Id { get; set; }
@@ -13,7 +14,6 @@ namespace C_Sharp_Learnings.Assignments
         public string Department { get; set; }
         public double Salary { get; set; }
     }
-
     class Assignment_4_1
     {
         static List<Employee> employeeList = new List<Employee>();
@@ -62,19 +62,14 @@ namespace C_Sharp_Learnings.Assignments
             try
             {
                 Employee emp = new Employee();
-
                 Console.Write("Enter ID: ");
                 emp.Id = Convert.ToInt32(Console.ReadLine());
-
                 Console.Write("Enter Name: ");
                 emp.Name = Console.ReadLine();
-
                 Console.Write("Enter Department: ");
                 emp.Department = Console.ReadLine();
-
                 Console.Write("Enter Salary: ");
                 emp.Salary = Convert.ToDouble(Console.ReadLine());
-
                 employeeList.Add(emp);
                 Console.WriteLine("Employee added successfully.");
             }
