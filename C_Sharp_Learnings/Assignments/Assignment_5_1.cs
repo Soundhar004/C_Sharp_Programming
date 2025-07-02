@@ -6,7 +6,21 @@ using System.Threading.Tasks;
 
 namespace C_Sharp_Learnings.Assignments
 {
-    class Accounts
+
+    public class InsufficientBalanceException : ApplicationException
+    {
+        public InsufficientBalanceException() : base("Insufficient balance for withdrawal.") 
+        {
+        }
+        public InsufficientBalanceException(string message) : base(message) 
+        {
+        }
+        public InsufficientBalanceException(string message, Exception innerException): base(message, innerException) 
+        {
+        }
+    }
+
+    class Assignment_5_1
     {
         public int balance;
         protected int account_no;
@@ -14,23 +28,32 @@ namespace C_Sharp_Learnings.Assignments
 
         public void GettingAccountInfo(out int account_no, out string cust_name, out string acc_type)
         {
-            
+
             Console.WriteLine("Enter your account number : ");
             account_no = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Enter the customer name : ");
             cust_name = Console.ReadLine();
             Console.WriteLine("Enter the account type Deposite or Withdrawal, Please type D/W : ");
             acc_type = Console.ReadLine();
-           
+
         }
 
         public void Credit(int amount)
         {
-            this.balance =  this.balance + amount;
+            this.balance = this.balance + amount;
         }
         public void Withdraw(int withdraw)
         {
-            this.balance = this.balance - withdraw;
+            if (withdraw <= this.balance)
+            {
+                this.balance = this.balance - withdraw;
+            }
+            else
+            {
+                throw new InsufficientBalanceException("Sorry, You don't have sufficient balance..");
+
+            }
+            
         }
         public void DisplayBalance()
         {
@@ -38,16 +61,17 @@ namespace C_Sharp_Learnings.Assignments
         }
 
 
-        static void Main(){
-            Accounts Obj_Acc = new Accounts();
+        static void Main()
+        {
+            Assignment_5_1 Obj_Acc = new Assignment_5_1();
             int a = 0;
-            while (a<5)
+            while (a < 5)
             {
                 Console.WriteLine("Do you want to use your account Yes/No : ");
                 string Account_Access = Console.ReadLine();
                 if (Account_Access == "Yes")
                 {
-                    
+
                     Obj_Acc.GettingAccountInfo(out int account_no, out string cust_name, out string acc_type);
                     Obj_Acc.account_no = account_no;
                     Obj_Acc.cust_name = cust_name;
@@ -75,14 +99,15 @@ namespace C_Sharp_Learnings.Assignments
                     {
                         Console.WriteLine("How much amount that you want to withdraw : ");
                         int Amount = Convert.ToInt32(Console.ReadLine());
-                        if (Amount <= Obj_Acc.balance)
+
+                        try
                         {
                             Obj_Acc.Withdraw(Amount);
-                            Console.WriteLine("Debited Successfully..");
                         }
-                        else
+                        catch(InsufficientBalanceException ex)
                         {
-                            Console.WriteLine("Sorry, You don't have sufficient ..");
+                            Console.WriteLine($"Error that we handled : {ex.Message}");
+
                         }
                         Console.WriteLine("Want to display the balance Yes/No : ");
                         string CheckBalance = Console.ReadLine();
@@ -98,7 +123,7 @@ namespace C_Sharp_Learnings.Assignments
                         }
 
                     }
-                    
+
                 }
                 else
                 {
@@ -109,5 +134,4 @@ namespace C_Sharp_Learnings.Assignments
         }
 
     }
-
 }
