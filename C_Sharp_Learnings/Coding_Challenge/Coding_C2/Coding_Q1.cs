@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+/*1.Create an Abstract class Student with Name, StudentId, Grade as members and 
+ also an abstract method Boolean Ispassed(grade) which takes grade as an input 
+ and checks whether student passed the course or not.*/
 namespace C_Sharp_Learnings.Coding_Challenge.Coding_C2
 {
     abstract class Student

@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+/*3.Write a C# program to implement a method that takes an integer as input and 
+throws an exception if the number is negative. Handle the exception in the calling code.*/
+
 namespace C_Sharp_Learnings.Coding_Challenge.Coding_C2
 {
     class Coding_Q3

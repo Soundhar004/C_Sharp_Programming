@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+/*2. Create a Class called Products with Productid, Product Name, Price. 
+Accept 10 Products, sort them based on the price, and display the sorted Products */
 namespace C_Sharp_Learnings.Coding_Challenge.Coding_C2
 {
     class Product
