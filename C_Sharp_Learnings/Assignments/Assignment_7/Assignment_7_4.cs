@@ -40,8 +40,8 @@ namespace C_Sharp_Learnings.Assignments.Assignment_7
             Concession concession = new Concession();
             string result = concession.CalculateConcession(age, TotalFare);
 
-            Console.WriteLine($"\n👤 Passenger: {name}");
-            Console.WriteLine($"🎫 Result: {result}");
+            Console.WriteLine($"\nPassenger: {name}");
+            Console.WriteLine($"Result: {result}");
             Console.Read();
         }
     }

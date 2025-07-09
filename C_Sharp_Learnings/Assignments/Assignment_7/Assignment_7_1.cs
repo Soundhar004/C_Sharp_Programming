@@ -13,7 +13,6 @@ namespace C_Sharp_Learnings.Assignments.Assignment_7
             Console.WriteLine("Enter numbers separated by commas :");
             string input = Console.ReadLine();
 
-            // Split and convert input to an array of integers
             string[] inputParts = input.Split(',');
             int[] numbers = new int[inputParts.Length];
 
@@ -22,7 +21,7 @@ namespace C_Sharp_Learnings.Assignments.Assignment_7
                 numbers[i] = int.Parse(inputParts[i].Trim());
             }
 
-            Console.WriteLine("\nNumbers and their squares (only if square > 20):");
+            Console.WriteLine("Numbers and their squares (only if square > 20):");
             foreach (int number in numbers)
             {
                 int square = number * number;

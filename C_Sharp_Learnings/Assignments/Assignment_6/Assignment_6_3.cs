@@ -17,10 +17,8 @@ namespace C_Sharp_Learnings.Assignments.Assignment_6
 
             try
             {
-                // Read all lines into an array
                 string[] lines = File.ReadAllLines(filePath);
 
-                // Count and display the number of lines
                 Console.WriteLine($"Total number of lines: {lines.Length}");
             }
             catch (FileNotFoundException)

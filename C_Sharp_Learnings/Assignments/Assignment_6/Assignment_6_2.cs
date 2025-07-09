@@ -15,8 +15,6 @@ namespace C_Sharp_Learnings.Assignments.Assignment_6
             int count = int.Parse(Console.ReadLine());
 
             string[] userInputs = new string[count];
-
-            // Getting user input
             for (int i = 0; i < count; i++)
             {
                 Console.Write($"Enter string #{i + 1}: ");
@@ -25,7 +23,6 @@ namespace C_Sharp_Learnings.Assignments.Assignment_6
 
             string filePath = "C:\\Users\\soundhark\\Documents\\Project_C#\\C_Sharp_Learnings\\Assignments\\Assignment_6\\File_Handling_Files\\UserStrings.txt";
 
-            // Writing to file
             try
             {
                 File.WriteAllLines(filePath, userInputs);

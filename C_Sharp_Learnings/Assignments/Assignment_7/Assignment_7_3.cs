@@ -27,7 +27,6 @@ namespace C_Sharp_Learnings.Assignments.Assignment_7
             Console.Write("How many employees do you want to enter? ");
             int count = int.Parse(Console.ReadLine());
 
-            // Accept employee data from user
             for (int i = 0; i < count; i++)
             {
                 Console.WriteLine($"\n--- Enter details for Employee #{i + 1} ---");
@@ -46,19 +45,19 @@ namespace C_Sharp_Learnings.Assignments.Assignment_7
                 employees.Add(new Employee { EmpId = id, EmpName = name, EmpCity = city, EmpSalary = salary });
             }
 
-            Console.WriteLine("\n👉 a. All Employees:");
+            Console.WriteLine("\na. All Employees:");
             foreach (Employee emp in employees)
                 emp.Display();
 
-            Console.WriteLine("\n👉 b. Employees with Salary > 45000:");
+            Console.WriteLine("b. Employees with Salary > 45000:");
             foreach (Employee emp in employees.Where(e => e.EmpSalary > 45000))
                 emp.Display();
 
-            Console.WriteLine("\n👉 c. Employees from Bangalore Region:");
+            Console.WriteLine("c. Employees from Bangalore Region:");
             foreach (Employee emp in employees.Where(e => e.EmpCity.Equals("Bangalore", StringComparison.OrdinalIgnoreCase)))
                 emp.Display();
 
-            Console.WriteLine("\n👉 d. Employees sorted by Name (Ascending):");
+            Console.WriteLine("d. Employees sorted by Name (Ascending):");
             foreach (Employee emp in employees.OrderBy(e => e.EmpName))
                 emp.Display();
 

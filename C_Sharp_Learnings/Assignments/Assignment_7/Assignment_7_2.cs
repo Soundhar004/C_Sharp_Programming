@@ -13,7 +13,6 @@ namespace C_Sharp_Learnings.Assignments.Assignment_7
             Console.WriteLine("Enter words separated by commas (e.g. mum,amsterdam,bloom):");
             string input = Console.ReadLine();
 
-            // Split input into words and trim any whitespace
             string[] words = input.Split(',');
 
             List<string> filteredWords = new List<string>();
@@ -22,7 +21,6 @@ namespace C_Sharp_Learnings.Assignments.Assignment_7
             {
                 string trimmed = word.Trim().ToLower();
 
-                // Check if word starts with 'a' and ends with 'm'
                 if (trimmed.StartsWith("a") && trimmed.EndsWith("m"))
                 {
                     filteredWords.Add(trimmed);
