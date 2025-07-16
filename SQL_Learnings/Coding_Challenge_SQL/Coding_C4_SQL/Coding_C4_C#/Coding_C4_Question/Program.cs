@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,7 +23,7 @@ namespace Coding_C4_Question
         static void Main(string[] args)
         {
             // Initialize employee list
-            List<Employee> empList = new List<Employee>
+            var empList = new List<Employee>
             {
                 new Employee { EmployeeID = 1001, FirstName = "Malcolm", LastName = "Daruwalla", Title = "Manager",     DOB = DateTime.Parse("1984-11-16"), DOJ = DateTime.Parse("2011-06-08"), City = "Mumbai" },
                 new Employee { EmployeeID = 1002, FirstName = "Asdin",   LastName = "Dhalla",     Title = "AsstManager", DOB = DateTime.Parse("1994-08-20"), DOJ = DateTime.Parse("2012-07-07"), City = "Mumbai" },
@@ -36,23 +37,38 @@ namespace Coding_C4_Question
                 new Employee { EmployeeID = 1010, FirstName = "Sumit",   LastName = "Shah",       Title = "Manager",     DOB = DateTime.Parse("1991-04-12"), DOJ = DateTime.Parse("2016-01-02"), City = "Pune" }
             };
 
-            Console.WriteLine("A. All Employees:\n");
-            empList.ForEach(PrintEmployee);
-
-            Console.WriteLine("\nB. Employees NOT from Mumbai:\n");
-            var notMumbai = empList.Where(emp => emp.City != "Mumbai");
-            foreach (var emp in notMumbai)
+            Console.WriteLine("A. All Employees: ");
+            foreach (var emp in empList)
+            {
                 PrintEmployee(emp);
+            }
 
-            Console.WriteLine("\nC. Employees with Title = 'AsstManager':\n");
-            var asstManagers = empList.Where(emp => emp.Title == "AsstManager");
-            foreach (var emp in asstManagers)
-                PrintEmployee(emp);
+            Console.WriteLine("\nB. Employees NOT from Mumbai: ");
+            foreach (var emp in empList)
+            {
+                if (emp.City != "Mumbai")
+                {
+                    PrintEmployee(emp);
+                }
+            }
 
-            Console.WriteLine("\nD. Employees with Last Name starting with 'S':\n");
-            var lastNameStartsWithS = empList.Where(emp => emp.LastName.StartsWith("S"));
-            foreach (var emp in lastNameStartsWithS)
-                PrintEmployee(emp);
+            Console.WriteLine("\nC. Employees with Title = 'AsstManager': ");
+            foreach (var emp in empList)
+            {
+                if (emp.Title == "AsstManager")
+                {
+                    PrintEmployee(emp);
+                }
+            }
+
+            Console.WriteLine("\nD. Employees with Last Name starting with 'S': ");
+            foreach (var emp in empList)
+            {
+                if (emp.LastName.StartsWith("S"))
+                {
+                    PrintEmployee(emp);
+                }
+            }
             Console.Read();
         }
 
