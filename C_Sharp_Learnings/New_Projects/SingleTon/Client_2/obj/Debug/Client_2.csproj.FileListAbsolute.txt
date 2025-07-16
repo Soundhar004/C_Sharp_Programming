@@ -1,0 +1,14 @@
+C:\Users\soundhark\Documents\Project_C#\C_Sharp_Learnings\New_Projects\SingleTon\Client_2\bin\Debug\Client_2.exe.config
+C:\Users\soundhark\Documents\Project_C#\C_Sharp_Learnings\New_Projects\SingleTon\Client_2\bin\Debug\Client_2.exe
+C:\Users\soundhark\Documents\Project_C#\C_Sharp_Learnings\New_Projects\SingleTon\Client_2\bin\Debug\Client_2.pdb
+C:\Users\soundhark\Documents\Project_C#\C_Sharp_Learnings\New_Projects\SingleTon\Client_2\bin\Debug\Client_1.exe
+C:\Users\soundhark\Documents\Project_C#\C_Sharp_Learnings\New_Projects\SingleTon\Client_2\bin\Debug\SingleTon.exe
+C:\Users\soundhark\Documents\Project_C#\C_Sharp_Learnings\New_Projects\SingleTon\Client_2\bin\Debug\Client_1.pdb
+C:\Users\soundhark\Documents\Project_C#\C_Sharp_Learnings\New_Projects\SingleTon\Client_2\bin\Debug\Client_1.exe.config
+C:\Users\soundhark\Documents\Project_C#\C_Sharp_Learnings\New_Projects\SingleTon\Client_2\bin\Debug\SingleTon.pdb
+C:\Users\soundhark\Documents\Project_C#\C_Sharp_Learnings\New_Projects\SingleTon\Client_2\bin\Debug\SingleTon.exe.config
+C:\Users\soundhark\Documents\Project_C#\C_Sharp_Learnings\New_Projects\SingleTon\Client_2\obj\Debug\Client_2.csproj.AssemblyReference.cache
+C:\Users\soundhark\Documents\Project_C#\C_Sharp_Learnings\New_Projects\SingleTon\Client_2\obj\Debug\Client_2.csproj.CoreCompileInputs.cache
+C:\Users\soundhark\Documents\Project_C#\C_Sharp_Learnings\New_Projects\SingleTon\Client_2\obj\Debug\Client_2.csproj.CopyComplete
+C:\Users\soundhark\Documents\Project_C#\C_Sharp_Learnings\New_Projects\SingleTon\Client_2\obj\Debug\Client_2.exe
+C:\Users\soundhark\Documents\Project_C#\C_Sharp_Learnings\New_Projects\SingleTon\Client_2\obj\Debug\Client_2.pdb

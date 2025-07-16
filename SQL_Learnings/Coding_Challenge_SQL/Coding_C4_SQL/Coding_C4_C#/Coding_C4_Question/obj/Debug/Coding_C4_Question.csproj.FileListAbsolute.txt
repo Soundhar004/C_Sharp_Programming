@@ -1,0 +1,7 @@
+C:\Users\soundhark\Documents\Project_C#\SQL_Learnings\Coding_Challenge_SQL\Coding_C4_SQL\Coding_C4_C#\Coding_C4_Question\bin\Debug\Coding_C4_Question.exe.config
+C:\Users\soundhark\Documents\Project_C#\SQL_Learnings\Coding_Challenge_SQL\Coding_C4_SQL\Coding_C4_C#\Coding_C4_Question\bin\Debug\Coding_C4_Question.exe
+C:\Users\soundhark\Documents\Project_C#\SQL_Learnings\Coding_Challenge_SQL\Coding_C4_SQL\Coding_C4_C#\Coding_C4_Question\bin\Debug\Coding_C4_Question.pdb
+C:\Users\soundhark\Documents\Project_C#\SQL_Learnings\Coding_Challenge_SQL\Coding_C4_SQL\Coding_C4_C#\Coding_C4_Question\obj\Debug\Coding_C4_Question.csproj.AssemblyReference.cache
+C:\Users\soundhark\Documents\Project_C#\SQL_Learnings\Coding_Challenge_SQL\Coding_C4_SQL\Coding_C4_C#\Coding_C4_Question\obj\Debug\Coding_C4_Question.csproj.CoreCompileInputs.cache
+C:\Users\soundhark\Documents\Project_C#\SQL_Learnings\Coding_Challenge_SQL\Coding_C4_SQL\Coding_C4_C#\Coding_C4_Question\obj\Debug\Coding_C4_Question.exe
+C:\Users\soundhark\Documents\Project_C#\SQL_Learnings\Coding_Challenge_SQL\Coding_C4_SQL\Coding_C4_C#\Coding_C4_Question\obj\Debug\Coding_C4_Question.pdb

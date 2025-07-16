@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>C_Sharp_Learnings.Coding_Challenge.Coding_C3.Coding_Q3</StartupObject>
+    <StartupObject>C_Sharp_Learnings.Rough.FactoryPattern</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -77,6 +77,10 @@
     <Compile Include="Rough\ComparableDemo.cs" />
     <Compile Include="Rough\Deep_Rough\Practice_1.cs" />
     <Compile Include="Rough\Event_Handling.cs" />
+    <Compile Include="Rough\Factory_Pattern\ClearanceDiscount.cs" />
+    <Compile Include="Rough\Factory_Pattern\FactoryPattern.cs" />
+    <Compile Include="Rough\Factory_Pattern\MembershipDiscount.cs" />
+    <Compile Include="Rough\Factory_Pattern\SeasonalDiscount.cs" />
     <Compile Include="Rough\FileHandle_1.cs" />
     <Compile Include="Rough\IcompareDemo.cs" />
     <Compile Include="Rough\Rough_1.cs" />

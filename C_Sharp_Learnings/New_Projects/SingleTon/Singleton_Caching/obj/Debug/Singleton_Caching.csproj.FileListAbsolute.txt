@@ -1,0 +1,7 @@
+C:\Users\soundhark\Documents\Project_C#\C_Sharp_Learnings\New_Projects\SingleTon\Singleton_Caching\obj\Debug\Singleton_Caching.csproj.AssemblyReference.cache
+C:\Users\soundhark\Documents\Project_C#\C_Sharp_Learnings\New_Projects\SingleTon\Singleton_Caching\obj\Debug\Singleton_Caching.csproj.CoreCompileInputs.cache
+C:\Users\soundhark\Documents\Project_C#\C_Sharp_Learnings\New_Projects\SingleTon\Singleton_Caching\bin\Debug\Singleton_Caching.exe.config
+C:\Users\soundhark\Documents\Project_C#\C_Sharp_Learnings\New_Projects\SingleTon\Singleton_Caching\bin\Debug\Singleton_Caching.exe
+C:\Users\soundhark\Documents\Project_C#\C_Sharp_Learnings\New_Projects\SingleTon\Singleton_Caching\bin\Debug\Singleton_Caching.pdb
+C:\Users\soundhark\Documents\Project_C#\C_Sharp_Learnings\New_Projects\SingleTon\Singleton_Caching\obj\Debug\Singleton_Caching.exe
+C:\Users\soundhark\Documents\Project_C#\C_Sharp_Learnings\New_Projects\SingleTon\Singleton_Caching\obj\Debug\Singleton_Caching.pdb
