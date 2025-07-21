@@ -118,19 +118,22 @@ WHERE COALESCE(comm, 0) > (sal * 1.10);
 
 -- 15. Display the name of all employees who have two Ls in their name and are in
 -- department 30 or their manager is 7782.
-SELECT ENAME
-FROM EMP
-WHERE (ENAME LIKE '%L%L%' AND DEPTNO = 30)
-   OR MGR_ID = 7782;
+select ename 
+from emp 
+where ename like '%l%l%' and (deptno = 30 or mgr_id = 7782);
 
 -- 16. Display the names of employees with experience of over 30 years and under 40 yrs.
 -- Count the total number of employees.
 -- Assuming current date is '21-JUL-2025' for experience calculation.
 -- Experience is calculated in years by dividing the difference in days by 365.25 to account for leap years.
-SELECT ename, (TO_DATE('21-JUL-2025', 'DD-MON-YYYY') - hiredate) / 365.25 AS years_of_experience
-FROM EMP
-WHERE ((TO_DATE('21-JUL-2025', 'DD-MON-YYYY') - hiredate) / 365.25) > 30
-  AND ((TO_DATE('21-JUL-2025', 'DD-MON-YYYY') - hiredate) / 365.25) < 40;
+select ename 
+from emp 
+where datediff(year, hiredate, getdate()) between 30 and 40;
+
+
+select count(*) as total_employees 
+from emp 
+where datediff(year, hiredate, getdate()) between 30 and 40;
 
 -- Total number of employees
 SELECT COUNT(*) AS total_employees
@@ -145,6 +148,6 @@ ORDER BY d.dname ASC, e.ename DESC;
 
 -- 18. Find out experience of MILLER.
 -- Assuming current date is '21-JUL-2025' for experience calculation.
-SELECT ename, (TO_DATE('21-JUL-2025', 'DD-MON-YYYY') - hiredate) / 365.25 AS years_of_experience
-FROM EMP
-WHERE ename = 'MILLER';
+select ename, round(datediff(day, hiredate, getdate()) / 365.0, 2) as experience_years 
+from emp 
+where ename = 'miller';
