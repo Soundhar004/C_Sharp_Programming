@@ -92,3 +92,5 @@ JOIN
     Marks M ON S.Sid = M.Sid
 ORDER BY
     S.Sname;
+
+select * from sys.all_sql_modules
