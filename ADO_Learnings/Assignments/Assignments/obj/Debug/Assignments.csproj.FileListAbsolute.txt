@@ -1,0 +1,7 @@
+C:\Users\soundhark\Documents\Project_C#\ADO_Learnings\Assignments\Assignments\bin\Debug\Assignments.exe.config
+C:\Users\soundhark\Documents\Project_C#\ADO_Learnings\Assignments\Assignments\bin\Debug\Assignments.exe
+C:\Users\soundhark\Documents\Project_C#\ADO_Learnings\Assignments\Assignments\bin\Debug\Assignments.pdb
+C:\Users\soundhark\Documents\Project_C#\ADO_Learnings\Assignments\Assignments\obj\Debug\Assignments.csproj.AssemblyReference.cache
+C:\Users\soundhark\Documents\Project_C#\ADO_Learnings\Assignments\Assignments\obj\Debug\Assignments.csproj.CoreCompileInputs.cache
+C:\Users\soundhark\Documents\Project_C#\ADO_Learnings\Assignments\Assignments\obj\Debug\Assignments.exe
+C:\Users\soundhark\Documents\Project_C#\ADO_Learnings\Assignments\Assignments\obj\Debug\Assignments.pdb

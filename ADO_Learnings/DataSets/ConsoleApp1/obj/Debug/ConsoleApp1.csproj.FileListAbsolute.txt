@@ -1,0 +1,7 @@
+C:\Users\soundhark\Documents\Project_C#\ADO_Learnings\DataSets\ConsoleApp1\bin\Debug\ConsoleApp1.exe.config
+C:\Users\soundhark\Documents\Project_C#\ADO_Learnings\DataSets\ConsoleApp1\bin\Debug\ConsoleApp1.exe
+C:\Users\soundhark\Documents\Project_C#\ADO_Learnings\DataSets\ConsoleApp1\bin\Debug\ConsoleApp1.pdb
+C:\Users\soundhark\Documents\Project_C#\ADO_Learnings\DataSets\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.AssemblyReference.cache
+C:\Users\soundhark\Documents\Project_C#\ADO_Learnings\DataSets\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.CoreCompileInputs.cache
+C:\Users\soundhark\Documents\Project_C#\ADO_Learnings\DataSets\ConsoleApp1\obj\Debug\ConsoleApp1.exe
+C:\Users\soundhark\Documents\Project_C#\ADO_Learnings\DataSets\ConsoleApp1\obj\Debug\ConsoleApp1.pdb
