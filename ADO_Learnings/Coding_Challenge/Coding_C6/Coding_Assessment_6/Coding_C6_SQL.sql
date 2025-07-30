@@ -12,11 +12,11 @@ CREATE PROCEDURE Insert_Employee_Details
     @Name VARCHAR(100),
     @givenSalary DECIMAL(10, 2),
     @Gender VARCHAR(10),
-    @GeneratedEmpId INT OUTPUT,         -- Output parameter to return the generated EmpId
-    @CalculatedSalary DECIMAL(10, 2) OUTPUT -- Output parameter to return the calculated Salary
+    @GeneratedEmpId INT OUTPUT,         
+    @CalculatedSalary DECIMAL(10, 2) OUTPUT 
 AS
 BEGIN
-    SET NOCOUNT ON; -- Suppresses the message indicating the number of rows affected.
+    SET NOCOUNT ON; 
 
     -- Calculate the actual salary (givenSalary - 10%)
     SET @CalculatedSalary = @givenSalary * 0.90;
@@ -28,15 +28,14 @@ BEGIN
     -- Retrieve the auto-generated EmpId for the newly inserted row
     SET @GeneratedEmpId = SCOPE_IDENTITY();
 
-    -- You can also select the inserted data if you prefer, but output parameters are better for ADO.NET
-    -- SELECT EmpId, Name, Salary, Gender FROM Employee_Details WHERE EmpId = @GeneratedEmpId;
+
 END;
 GO
 
 select * from Employee_Details
 
 
-CREATE PROCEDURE Update_Employee_Salary
+CREATE PROCEDURE UpdateEmployeeSalary
     @EmpId INT,
     @UpdatedSalary FLOAT OUTPUT
 AS
