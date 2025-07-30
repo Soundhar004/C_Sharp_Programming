@@ -1,0 +1,7 @@
+C:\Users\soundhark\Documents\Project_C#\ADO_Learnings\Coding_Challenge\Coding_C6\Coding_Assessment_6\bin\Debug\Coding_Assessment_6.exe.config
+C:\Users\soundhark\Documents\Project_C#\ADO_Learnings\Coding_Challenge\Coding_C6\Coding_Assessment_6\bin\Debug\Coding_Assessment_6.exe
+C:\Users\soundhark\Documents\Project_C#\ADO_Learnings\Coding_Challenge\Coding_C6\Coding_Assessment_6\bin\Debug\Coding_Assessment_6.pdb
+C:\Users\soundhark\Documents\Project_C#\ADO_Learnings\Coding_Challenge\Coding_C6\Coding_Assessment_6\obj\Debug\Coding_Assessment_6.csproj.AssemblyReference.cache
+C:\Users\soundhark\Documents\Project_C#\ADO_Learnings\Coding_Challenge\Coding_C6\Coding_Assessment_6\obj\Debug\Coding_Assessment_6.csproj.CoreCompileInputs.cache
+C:\Users\soundhark\Documents\Project_C#\ADO_Learnings\Coding_Challenge\Coding_C6\Coding_Assessment_6\obj\Debug\Coding_Assessment_6.exe
+C:\Users\soundhark\Documents\Project_C#\ADO_Learnings\Coding_Challenge\Coding_C6\Coding_Assessment_6\obj\Debug\Coding_Assessment_6.pdb

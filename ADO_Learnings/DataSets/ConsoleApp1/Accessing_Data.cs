@@ -26,8 +26,9 @@ namespace ConsoleApp1
             {
                 Console.WriteLine($"some error : {e.Message}");
             }
-            SelectData();
-         /*   InsertData();*/
+            /*SelectData();*/
+            InsertData();
+            /* CreateTable();*/
             Console.Read();
         }
         static SqlConnection GetConnection()
@@ -39,16 +40,33 @@ namespace ConsoleApp1
             return conn;
         }
 
+
+        static void CreateTable()
+        {
+            try
+            {
+                conn = GetConnection();
+                string query = "create table student_clg(stud_id int primary key,stud_name varchar(20),stud_dept varchar(30))";
+                command = new SqlCommand(query, conn);
+                reader = command.ExecuteReader();
+                Console.WriteLine("Table Created Successfully....");
+            }
+            catch(SqlException e)
+            {
+                Console.WriteLine($"Error : {e.Message}");
+            }
+        }
+
         static void SelectData()
         {
             try
             {
                 conn = GetConnection();
-               /* Console.WriteLine("Enter Department No : ");
-                int deptno = Convert.ToInt32(Console.ReadLine());*/
-                /*command = new SqlCommand($"select * from EMP where Deptno={deptno}", conn);*/
+                Console.WriteLine("Enter Department No : ");
+                int deptno = Convert.ToInt32(Console.ReadLine());
+                command = new SqlCommand($"select * from EMP where Deptno={deptno}", conn);
                 command = new SqlCommand("select * from Dept where Deptno=23", conn);
-              /*  command.Parameters.AddWithValue("@deptno", deptno);*/
+                command.Parameters.AddWithValue("@deptno", deptno);
                 reader = command.ExecuteReader();
                 bool status = reader.HasRows;
                 if (status)
@@ -56,10 +74,10 @@ namespace ConsoleApp1
                     Console.WriteLine("Starting to Display");
                     while (reader.Read())
                     {
-                     /*   Console.WriteLine("Employee ID : " + reader["Empno"]);*/
+                        Console.WriteLine("Employee ID : " + reader["Empno"]);
                         Console.WriteLine("Employee name: " + reader["Dname"]);
-                     /*   Console.WriteLine("Employee Salary : " + reader["sal"]);
-                        Console.WriteLine("Department Nunmber : " + reader["Deptno"]);*/
+                        Console.WriteLine("Employee Salary : " + reader["sal"]);
+                        Console.WriteLine("Department Nunmber : " + reader["Deptno"]);
                     }
                 }
                 else
@@ -85,13 +103,13 @@ namespace ConsoleApp1
                 string stud_name = Console.ReadLine();
                 Console.WriteLine("Enter Student Department : ");
                 string stud_dept = Console.ReadLine();
-                string query = "insert into DEPT values(@DEPTNO,@DNAME,@LOC)";
+                string query = "insert into student_clg values(@stud_id,@stud_name,@stud_dept)";
 
                 command = new SqlCommand(query);
                 command.Connection = conn;
-                command.Parameters.AddWithValue("@DEPTNO", stud_id);
-                command.Parameters.AddWithValue("@DNAME", stud_name);
-                command.Parameters.AddWithValue("@LOC", stud_dept);
+                command.Parameters.AddWithValue("@stud_id", stud_id);
+                command.Parameters.AddWithValue("@stud_name", stud_name);
+                command.Parameters.AddWithValue("@stud_dept", stud_dept);
 
                 int rows_affected = command.ExecuteNonQuery();
                 if(rows_affected > 0)
@@ -105,7 +123,7 @@ namespace ConsoleApp1
             }
             catch (Exception e)
             {
-                Console.WriteLine("Error : ", e.Message);
+                Console.WriteLine($"Error : {e.Message}");
             }
         }
 
