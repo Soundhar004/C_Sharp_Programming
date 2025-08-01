@@ -1,0 +1,174 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .section {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+            border-radius: 10px;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #0066cc;
+        }
+
+        /* Image overlay */
+        .image-container {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+            .image-container img {
+                width: 100%;
+                border-radius: 10px;
+            }
+
+        .image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            border-radius: 10px;
+        }
+
+        .image-container:hover .image-overlay {
+            opacity: 1;
+        }
+
+        /* Button styles */
+        .stylish-button {
+            background-color: #0066cc;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            display: block;
+            margin: 20px auto;
+        }
+
+            .stylish-button:hover {
+                background-color: #004080;
+            }
+
+        /* Animation box */
+        .animate-box {
+            width: 100px;
+            height: 100px;
+            background: coral;
+            margin: 20px auto;
+            animation: pulse 1s ease-in-out 2s;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Definition list */
+        dl {
+            margin-left: 40px;
+        }
+
+        /* Tribute page styles */
+        .tribute-img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="section">
+        <h1>Image Overlay on Hover</h1>
+        <div class="image-container">
+            <img src="Images/person.jpg" alt="Overlay Image" />
+            <div class="image-overlay">Hello There!</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h1>CSS Button</h1>
+        <button class="stylish-button">Click Me</button>
+    </div>
+
+    <div class="section">
+        <h1>Definition List</h1>
+        <dl>
+            <dt>HTML</dt>
+            <dd>The standard markup language for creating web pages.</dd>
+            <dt>CSS</dt>
+            <dd>Style sheet language used for describing the appearance of a document.</dd>
+            <dt>JavaScript</dt>
+            <dd>Programming language used to add interactivity to websites.</dd>
+        </dl>
+    </div>
+
+    <div class="section">
+        <h1>Animation Delay & Restart</h1>
+        <div id="box" class="animate-box"></div>
+        <button class="stylish-button" onclick="restart()">Restart Animation</button>
+    </div>
+
+    <div class="section">
+        <h1>Tribute Page: Dr. A.P.J. Abdul Kalam</h1>
+        <img class="tribute-img" src="Images/tribute_person.jpg" alt="Dr. Kalam" />
+        <p>Dr. Kalam, the Missile Man of India, was renowned for his pioneering work in aerospace engineering and his inspiring leadership as the 11th President of India.</p>
+        <h2>Achievements</h2>
+        <ul>
+            <li>Developed India's first satellite launch vehicle (SLV).</li>
+            <li>Led India's nuclear tests in 1998.</li>
+            <li>Awarded Bharat Ratna, India's highest civilian honor.</li>
+            <li>Inspired millions through books like "Wings of Fire" and speeches.</li>
+        </ul>
+    </div>
+
+    <script>function restart() {
+      const box = document.getElementById("box");
+      box.style.animation = "none";
+      void box.offsetHeight; // trigger reflow
+      box.style.animation = "pulse 1s ease-in-out 2s";
+    }</script>
+
+</body>
+
+</html>
