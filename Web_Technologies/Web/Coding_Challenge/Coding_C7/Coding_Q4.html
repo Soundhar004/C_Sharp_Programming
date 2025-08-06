@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Sample Table</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+        }
+
+        td, th {
+            border: 1px solid #333;
+            padding: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>Sample Table</h2>
+    <table>
+        <tr><td>Row 1</td></tr>
+        <tr><td>Row 2</td></tr>
+        <tr><td>Row 3</td></tr>
+        <tr><td>Row 4</td></tr>
+        <tr><td>Row 5</td></tr>
+    </table>
+
+    <button onclick="hideOddRows()">Hide Odd Rows</button>
+
+    <script>
+        function hideOddRows() {
+            const oddRows = document.querySelectorAll("table tr:nth-child(odd)");
+            oddRows.forEach(row => {
+                row.style.display = "none";
+            });
+        }
+    </script>
+
+</body>
+</html>

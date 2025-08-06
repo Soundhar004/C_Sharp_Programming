@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.4.1.min.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 20px;
+            background-color: #f4f7f6;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 400px;
+            text-align: center; 
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        ul {
+            list-style: none; 
+            padding: 0;
+            margin: 0 0 20px 0; 
+        }
+
+        li {
+            background-color: #e0f2f7; 
+            border: 1px solid #b3e5fc;
+            margin-bottom: 8px;
+            padding: 12px 15px;
+            border-radius: 6px;
+            font-size: 1.1em;
+            color: #01579b;
+            display: flex; 
+            align-items: center;
+            gap: 8px; 
+        }
+
+            li span.index {
+                font-weight: bold;
+                color: forestgreen; 
+                font-size: 1.2em;
+            }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff; 
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+
+            button:hover {
+                background-color: #0056b3; 
+            }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>List Items</h2>
+        <ul id="myList">
+            <li>CSHARP</li>
+            <li>SQL</li>
+            <li>ADO</li>
+            <li>JavaScript</li>
+            <li>Python</li>
+        </ul>
+        <button id="addIndexBtn">Add Index to List</button>
+    </div>
+
+    <script>
+ 
+        $(document).ready(function() {
+           
+            const $addIndexBtn = $('#addIndexBtn');
+          
+            $addIndexBtn.on('click', function() {
+             
+                $('#myList li').each(function(index) {
+              
+                    if (!$(this).find('span.index').length) {
+                 
+                        $(this).prepend('<span class="index">' + index + '</span> ');
+                    }
+                });
+                console.log('Script executed: Index added to each list item.');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -14,27 +14,68 @@ namespace Railway_Reservation_System
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("==========================================================");
-            Console.WriteLine("*******Please select to get inside*********\n" +
-                "1. Login as a Passenger.\n" +
-                "2. Login as a Admin.\n" +
-                "3. Register as a User.\n" +
-                "(Note : After the registration youcan able to Login.)");
-            int Getuser =  Convert.ToInt32(Console.ReadLine().ToLower());
-            users_login userlogin = new users_login();
-            switch (Getuser)
-            {
-                case 1:
-                    break;
-                case 2:
-                    break;
-                case 3:
-                    userlogin.UserSignup();
-                    break;
-            }
-            
 
-            Console.Read();
+            while (true) 
+            { 
+                Console.WriteLine("==========================================================");
+                Console.WriteLine("*******Please select to get inside*********\n" +
+                    "1. Login as a Passenger.\n" +
+                    "2. Login as a Admin.\n" +
+                    "3. Register as a User.\n" +
+                    "4. Register as a Admin.\n" +
+                    "(Note : After the registration youcan able to Login.)");
+
+                int Getuser = Convert.ToInt32(Console.ReadLine());
+
+                users_login userlogin = new users_login();
+                admin_login adminlogin = new admin_login();
+                admin_dashboard admindashboard = new admin_dashboard();
+                switch (Getuser)
+                {
+                    case 1:
+                        userlogin.LoginValidate();
+                        if (users_login.Login_Status)
+                        {
+                            Console.WriteLine($"Welcome {users_login.user}, Now you can able to access the application");
+                            user_dashboard.UserMenu();
+                        }
+                        else
+                        {
+                            users_login.Login_Status = false;
+                        }
+
+                        break;
+
+                    case 2:
+                        adminlogin.AdminLogin();
+                        if (admin_login.Admin_Login_Status)
+                        {
+                            Console.WriteLine($"Welcome {admin_login.adminname}, Now you can able to access the application");
+                            admindashboard.AdminMenu();
+                        }
+                        else
+                        {
+                            users_login.Login_Status = false;
+                        }
+                        break;
+
+                    case 3:
+                        userlogin.UserSignup();
+                        break;
+
+                    case 4:
+                        adminlogin.AdminSignup();
+                        break;
+                    case 5:
+                        return;
+                    default:
+                        Console.WriteLine("Invalid Option. ");
+                        break;
+
+                }
+            }
+
+            
         }
     }
 }

@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Change Appender</title>
+    <!-- Include jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #e8f5e9; /* Light green background */
+            color: #333;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #2e7d32; /* Dark green */
+            margin-bottom: 25px;
+            font-size: 2.2em;
+        }
+
+        input[type="text"] {
+            width: calc(100% - 20px); /* Adjust for padding */
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #a5d6a7; /* Light green border */
+            border-radius: 8px;
+            font-size: 1.1em;
+            box-sizing: border-box;
+        }
+
+        #messageLog {
+            margin-top: 20px;
+            border: 1px solid #c8e6c9; /* Lighter green border */
+            background-color: #f1f8e9; /* Very light green background */
+            padding: 15px;
+            border-radius: 8px;
+            min-height: 100px;
+            max-height: 300px; /* Limit height for scrollability */
+            overflow-y: auto; /* Enable vertical scrolling */
+            text-align: left;
+        }
+
+            #messageLog p {
+                margin: 8px 0;
+                padding: 8px 10px;
+                background-color: #dcedc8; /* Slightly darker green for individual messages */
+                border-radius: 5px;
+                font-size: 0.95em;
+                color: #33691e; /* Dark green text */
+                word-wrap: break-word; /* Ensure long text wraps */
+            }
+
+                #messageLog p:first-child {
+                    margin-top: 0;
+                }
+
+                #messageLog p:last-child {
+                    margin-bottom: 0;
+                }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Input Change Listener</h1>
+
+        <input type="text" id="myInputField" placeholder="Type something and press Enter or Tab...">
+
+        <div id="messageLog">
+            <p>Messages will appear here when you change the input field's value.</p>
+        </div>
+    </div>
+
+    <script>
+        // Ensure the DOM is fully loaded before running the script
+        $(document).ready(function () {
+            // Get a reference to the input field using its ID
+            const $myInputField = $('#myInputField');
+
+            // Get a reference to the div where messages will be appended
+            const $messageLog = $('#messageLog');
+
+            /**
+             * Handles the 'change' event for the input field.
+             * Appends a new paragraph with a message to the message log.
+             */
+            $myInputField.on('change', function () {
+                const inputValue = $(this).val(); // Get the current value of the input field
+                const timestamp = new Date().toLocaleTimeString(); // Get current time for the message
+
+                // Create a new <p> element with the message
+                // The .text() method ensures that the input value is treated as plain text,
+                // preventing potential XSS issues if the input contained HTML.
+                const newMessage = $('<p>').text(`[${timestamp}] Input value changed to: "${inputValue}"`);
+
+                // Append the new <p> element to the message log
+                $messageLog.append(newMessage);
+
+                // Optional: Scroll to the bottom of the message log to show the latest message
+                $messageLog.scrollTop($messageLog[0].scrollHeight);
+
+                console.log(`Input field changed. New value: "${inputValue}"`);
+            });
+
+            console.log('Script loaded: Input field change listener attached.');
+        });
+    </script>
+
+</body>
+</html>

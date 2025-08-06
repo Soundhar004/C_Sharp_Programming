@@ -63,10 +63,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Accessors\Reservation_Access.cs" />
+    <Compile Include="Accessors\Trains_Access.cs" />
+    <Compile Include="Data_Infrastructure\Train_Data.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Templates\admin_dashboard.cs" />
+    <Compile Include="Templates\admin_login.cs" />
     <Compile Include="Templates\db_connection.cs" />
+    <Compile Include="Templates\ticket_booking.cs" />
     <Compile Include="Templates\users_login.cs" />
+    <Compile Include="Templates\user_dashboard.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

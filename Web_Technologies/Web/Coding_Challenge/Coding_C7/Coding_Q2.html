@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f9f9f9;
+        }
+
+        h2 {
+            color: #444;
+        }
+
+        #output {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Odd or Even Checker (0 to 15)</h2>
+    <button onclick="checkOddEven()">Check Odd or Even</button>
+
+    <div id="output"></div>
+
+    <script>function checkOddEven() {
+      const outputDiv = document.getElementById('output');
+      outputDiv.innerHTML = ""; // Clear previous output
+
+      for (let i = 0; i <= 15; i++) {
+        const type = (i % 2 === 0) ? "even" : "odd";
+        outputDiv.innerHTML += `"${i} is ${type}"<br>`;
+      }
+    }</script>
+
+</body>
+</html>

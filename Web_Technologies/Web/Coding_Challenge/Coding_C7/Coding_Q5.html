@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            margin: 10px 0;
+            padding: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .highlighted {
+            background-color: #cce5ff;
+            border-left: 5px solid #3399ff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="highlightH1s()">Highlight h1 in div</button>
+
+    <div>
+        <h1>This h1 is inside a div</h1>
+        <p>This is a paragraph inside the same div.</p>
+    </div>
+
+    <section>
+        <h1>This h1 is inside a section</h1>
+    </section>
+
+    <div>
+        <h1>Another h1 inside a div</h1>
+    </div>
+
+    <script>
+        function highlightH1s() {
+            const h1Elements = document.querySelectorAll("div > h1");
+            h1Elements.forEach(h1 => {
+                h1.classList.add("highlighted");
+            });
+        }
+    </script>
+
+</body>
+</html>

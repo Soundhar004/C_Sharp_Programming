@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.4.1.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        li {
+            padding: 5px;
+            margin-bottom: 3px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+
+        .highlight {
+            background-color: #ffe0b2; /* Light orange */
+            font-weight: bold;
+            border-color: #ff9800;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>List of Technologies:</h2>
+    <ul>
+        <li>CSHARP</li>
+        <li>SQL</li>
+        <li>ADO</li>
+        <li>JavaScript</li>
+        <li>HTML</li>
+    </ul>
+    <p>
+        This backgroud with colored is selected Single element
+    </p>
+    <p>Check the console for examples of single element selection.</p>
+
+    <script>
+        $(document).ready(function () {
+
+            const allListItems = $('li');
+            console.log('All list items:', allListItems);
+            // 1. Using .first() - Gets the first element in the selection
+            const firstItem = allListItems.first();
+            console.log('First list item (using .first()):', firstItem.text());
+            firstItem.addClass('highlight'); // Apply a class to see it visually
+        });
+    </script>
+
+</body>
+</html>
