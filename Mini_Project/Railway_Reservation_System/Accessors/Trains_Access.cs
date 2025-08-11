@@ -22,7 +22,6 @@ namespace Railway_Reservation_System.Accessors
         public decimal Fare { get; set; }
         public string TrainType { get; set; }
         public string Status { get; set; }
-
         public string IsDeleted { get; set; }
 
     }

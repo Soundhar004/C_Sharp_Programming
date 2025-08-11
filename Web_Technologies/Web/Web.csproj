@@ -52,9 +52,19 @@
   <ItemGroup>
     <Content Include="Assignments\Assignment_1.html" />
     <Content Include="Assignments\Assignment_2.html" />
+    <Content Include="Coding_Challenge\Coding_C7\Coding_Q1.html" />
+    <Content Include="Coding_Challenge\Coding_C7\Coding_Q2.html" />
+    <Content Include="Coding_Challenge\Coding_C7\Coding_Q3.html" />
+    <Content Include="Coding_Challenge\Coding_C7\Coding_Q4.html" />
+    <Content Include="Coding_Challenge\Coding_C7\Coding_Q5.html" />
+    <Content Include="Coding_Challenge\Coding_C7\Coding_Q6.html" />
+    <Content Include="Coding_Challenge\Coding_C7\Coding_Q7.html" />
+    <Content Include="Coding_Challenge\Coding_C7\Coding_Q8.html" />
+    <Content Include="Rough.html" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assignments\Images\" />
+    <Folder Include="Coding_Challenge\Coding_C7\Coding_C7_Outputs\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

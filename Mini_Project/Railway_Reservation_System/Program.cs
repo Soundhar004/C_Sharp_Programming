@@ -15,28 +15,29 @@ namespace Railway_Reservation_System
         static void Main(string[] args)
         {
 
-            while (true) 
-            { 
                 Console.WriteLine("==========================================================");
-                Console.WriteLine("*******Please select to get inside*********\n" +
-                    "1. Login as a Passenger.\n" +
-                    "2. Login as a Admin.\n" +
-                    "3. Register as a User.\n" +
-                    "4. Register as a Admin.\n" +
-                    "(Note : After the registration youcan able to Login.)");
+                Console.WriteLine("*******Please select to get inside*********\n\n" +
+                    "1. Login as a Passenger.\n\n" +
+                    "2. Login as a Admin.\n\n" +
+                    "3. Register as a User.\n\n" +
+                    "4. Register as a Admin.\n\n" +
+                    "5. To Exit.\n\n"+
+                    "(Note : After the registration youcan able to Login.)\n");
 
+                Console.WriteLine("Enter the option : ");
                 int Getuser = Convert.ToInt32(Console.ReadLine());
-
+               
                 users_login userlogin = new users_login();
                 admin_login adminlogin = new admin_login();
                 admin_dashboard admindashboard = new admin_dashboard();
+
                 switch (Getuser)
                 {
                     case 1:
                         userlogin.LoginValidate();
                         if (users_login.Login_Status)
                         {
-                            Console.WriteLine($"Welcome {users_login.user}, Now you can able to access the application");
+                            Console.WriteLine($"Welcome {users_login.user}, Book Your Ticket and Enjoy Your Journey");
                             user_dashboard.UserMenu();
                         }
                         else
@@ -50,7 +51,7 @@ namespace Railway_Reservation_System
                         adminlogin.AdminLogin();
                         if (admin_login.Admin_Login_Status)
                         {
-                            Console.WriteLine($"Welcome {admin_login.adminname}, Now you can able to access the application");
+                            Console.WriteLine($"Welcome Admin {admin_login.adminname}, Now You Can Able To Modify....");
                             admindashboard.AdminMenu();
                         }
                         else
@@ -73,7 +74,6 @@ namespace Railway_Reservation_System
                         break;
 
                 }
-            }
 
             
         }

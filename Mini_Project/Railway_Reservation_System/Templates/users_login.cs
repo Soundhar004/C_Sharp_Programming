@@ -95,10 +95,11 @@ namespace Railway_Reservation_System.Templates
                         bool result = VerifyPassword(password, pass);
                         if (result)
                         {
-                            Console.WriteLine("Login Successfully...");
-                            Console.WriteLine(Userid);
+                            Console.WriteLine("You Logged in Successfully...");
+                            /*Console.WriteLine($"Welcome {user}, Book Your Ticket and Enjoy Your Journey");*/
+                            /*Console.WriteLine(Userid);
                             Console.WriteLine(user);
-                            Console.WriteLine(pass);
+                            Console.WriteLine(pass);*/
                             Login_Status = true;
                         }
                         else
@@ -154,11 +155,15 @@ namespace Railway_Reservation_System.Templates
                 int rows_affected = command.ExecuteNonQuery();
                 if (rows_affected > 0)
                 {
-                    Console.WriteLine("Inserted Successfully......");
+
+                    /*Console.WriteLine("Inserted Successfully......");*/
+                    Console.WriteLine("Registered Successfully.....");
+                    Console.WriteLine("Login to Use Your Application......");
                 }
                 else
                 {
-                    Console.WriteLine("Something went wrong, It Can't able to insert.....");
+                    /*Console.WriteLine("Something went wrong, It Can't able to insert.....");*/
+                    Console.WriteLine("Something went wrong while Registering!");
                 }
             }
             catch (Exception e)

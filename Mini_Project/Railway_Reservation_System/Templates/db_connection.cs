@@ -19,7 +19,7 @@ namespace Railway_Reservation_System.Templates
                 server = ConfigurationManager.ConnectionStrings["DB_Connection"].ConnectionString;
                 SqlConnection conn = new SqlConnection(server);
                 conn.Open();
-                Console.WriteLine("Connection Established Successfully!!.......");
+                /*Console.WriteLine("Connection Established Successfully!!.......");*/
                 return conn;
             }
             catch (Exception e)

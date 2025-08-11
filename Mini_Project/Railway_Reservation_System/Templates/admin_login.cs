@@ -73,10 +73,10 @@ namespace Railway_Reservation_System.Templates
                         bool result = users_login.VerifyPassword(password, adminpass);
                         if (result)
                         {
-                            Console.WriteLine("Admin Login Successfull...");
-                            Console.WriteLine(AdminId);
+                            Console.WriteLine("Admin Logged in Successfully...");
+                            /*Console.WriteLine(AdminId);
                             Console.WriteLine(adminname);
-                            Console.WriteLine(adminpass);
+                            Console.WriteLine(adminpass);*/
                             Admin_Login_Status = true;
                         }
                         else
