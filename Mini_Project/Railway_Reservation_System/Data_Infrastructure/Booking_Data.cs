@@ -20,6 +20,9 @@ namespace Railway_Reservation_System.Data_Infrastructure
             
             Console.WriteLine("Enter Train Id : ");
             int trainId = Convert.ToInt32(Console.ReadLine());
+
+            trainclass.ShowAvailability(trainId);
+
             Console.WriteLine("Enter Passenger name : ");
             string passengerName = Console.ReadLine();
             Console.WriteLine("Enter From station : ");
@@ -28,9 +31,18 @@ namespace Railway_Reservation_System.Data_Infrastructure
             string toStation = Console.ReadLine();
             Console.WriteLine("Enter Travel Date (yyyy-MM-dd):");
             DateTime travelDate = DateTime.Parse(Console.ReadLine());
+            if (travelDate.Date < DateTime.Today)
+            {
+                Console.WriteLine("\nAlert!! : Travel date cannot be in the past. Please select today or a future date.\n");
+            }
+            /*else
+            {
+                Console.WriteLine($"✅ Travel Date Accepted: {travelDate:yyyy-MM-dd}");
+
+            }*/
             Console.WriteLine("Enter No of Seats : ");
             int seatNo = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Enter Seat Type : ");
+            Console.WriteLine("Enter Seat Type (seater / seater Ac) : ");
             string seatType = Console.ReadLine();
 
 
@@ -77,10 +89,17 @@ namespace Railway_Reservation_System.Data_Infrastructure
             {
                 using (SqlConnection conn = db_connection.CreateConnection())
                 {
-                    string query = @"INSERT INTO Reservation (PassengerName, FromStation, ToStation, TravelDate, SeatNo, SeatType, BookingDate, TotalCost, IsDeleted, IsCancelled, TrainID )
-                                    VALUES (@passengername, @fromstation, @arrivalstation, @traveldate, @seatno ,@seattype, @bookingdate, @totalcost, @Isdeleted, @Iscancelled, @trainid);";
+                    string query = @"INSERT INTO Reservation (
+                                        PassengerName, FromStation, ToStation, TravelDate, SeatNo, SeatType,
+                                        BookingDate, TotalCost, IsDeleted, IsCancelled, TrainID)
+                                        SELECT 
+                                        @passengername, @fromstation, @arrivalstation, @traveldate, @seatno, @seattype,
+                                        @bookingdate, @totalcost, @Isdeleted, @Iscancelled, @trainid
+                                        FROM Trains
+                                        WHERE TrainID = @trainidnum AND IsDeleted = 0";
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
+                        
                         cmd.Parameters.AddWithValue("@passengername", reserve.PassengerName);
                         cmd.Parameters.AddWithValue("@fromstation", reserve.FromStation);
                         cmd.Parameters.AddWithValue("@arrivalstation", reserve.ToStation);
@@ -92,6 +111,7 @@ namespace Railway_Reservation_System.Data_Infrastructure
                         cmd.Parameters.AddWithValue("@Isdeleted", 0);
                         cmd.Parameters.AddWithValue("@trainid", reserve.TrainId);
                         cmd.Parameters.AddWithValue("@Iscancelled", 0);
+                        cmd.Parameters.AddWithValue("@trainidnum", reserve.TrainId);
                         cmd.ExecuteNonQuery();
                     }
                 }

@@ -11,7 +11,6 @@ namespace Railway_Reservation_System.Templates
 {
     class user_dashboard
     {
-
         static Train_Data traindata = new Train_Data();
         static Booking_Data bookingtrain = new Booking_Data();
         static View_Ticket viewticket = new View_Ticket();
@@ -22,9 +21,19 @@ namespace Railway_Reservation_System.Templates
             bool run = true;
             while (run)
             {
+                string headerText = "USER DASHBOARD";
+                string headerBorder = new string('=', 50);
+
+                Console.WriteLine($"\n{headerBorder}");
+
+                Console.WriteLine($"{headerText.PadLeft((headerBorder.Length - headerText.Length) / 2 + headerText.Length)}");
+
+                Console.WriteLine($"{headerBorder}\n");
+
+                /*Console.WriteLine("\n==========================================================");*/
                 Console.WriteLine("\n1. To View All the Trains.");
-                Console.WriteLine("\n2. To Book your Tickets.");
-                Console.WriteLine("\n3. To View my Bookings.");
+                Console.WriteLine("\n2. To Book Your Tickets.");
+                Console.WriteLine("\n3. To View All My Bookings.");
                 Console.WriteLine("\n4. To Cancel the Ticket.");
                 Console.WriteLine("\n5. To view my cancelled Tickets.");
                 Console.WriteLine("\n6. To Delete the Ticket.");
@@ -38,16 +47,17 @@ namespace Railway_Reservation_System.Templates
                     case 1:
                         Console.WriteLine("****************All Available Trains*************");
                         var trains = traindata.ViewAllTrains();
+                        
                         foreach (var t in trains)
                         {
                             Console.WriteLine("---------------------------------------------------------");
-                            Console.WriteLine($"Train No : {t.TrainNumber}, \n" +
+                            Console.WriteLine($"Tarin Id : {t.TrainID}\n" +
+                                $"Train No : {t.TrainNumber}, \n" +
                                 $"Train Name: {t.TrainName},\n" +
-                                $" Source Station  : {t.SourceStation}, \n" +
+                                $"Source Station  : {t.SourceStation}, \n" +
                                 $"Destination Station : {t.DestinationStation}, \n" +
                                 $"Departure Time : {t.DepartureTime}, \n" +
                                 $"Arrival Time : {t.ArrivalTime}, \n" +
-                                $"Travel Date : {t.TravelDate}, \n" +
                                 $"Duration : {t.Duration}, \n" +
                                 $"Total Seats : {t.TotalSeats}, \n" +
                                 $"Fare : {t.Fare}, \n" +
@@ -75,7 +85,23 @@ namespace Railway_Reservation_System.Templates
                         }
                         break;
                     case 3:
-                        try
+                        var Ticket = viewticket.ViewAllBookings();
+                        foreach (var t in Ticket)
+                        {
+                            Console.WriteLine("\n*********Your Booking*********");
+                            Console.WriteLine($"Booking ID      : {t.BookingId}");
+                            Console.WriteLine($"Train Id        : {t.TrainId}");
+                            Console.WriteLine($"Passenger Name  : {t.PassengerName}");
+                            Console.WriteLine($"From Station    : {t.FromStation}");
+                            Console.WriteLine($"Arrival Station : {t.ToStation}");
+                            Console.WriteLine($"Travel Date     : {t.TravelDate}");
+                            Console.WriteLine($"Seat Number     : {t.SeatNo}");
+                            Console.WriteLine($"Seat Type       : {t.SeatType}");
+                            Console.WriteLine($"Booking Date    : {t.BookingDate}");
+                            Console.WriteLine($"Total Cost      : {t.TotalCost}");
+                            Console.WriteLine($"Cancelled      : {(t.IsCancelled ? "Yes" : "No")}");
+                        }
+                       /* try
                         {
                             if (viewticket.ShowTicket())
                             {
@@ -89,7 +115,7 @@ namespace Railway_Reservation_System.Templates
                         catch (Exception e)
                         {
                             Console.WriteLine($"Something went wrong : {e.Message}");
-                        }
+                        }*/
                         break;
 
                     case 4:
@@ -103,7 +129,7 @@ namespace Railway_Reservation_System.Templates
                             Console.WriteLine("Invalid or already cancelled booking.");
                             return;
                         }
-                        bool cancel = cancelticket.CancelTheTicket(bookingid, result.TotalCost * 0.5m);
+                        bool cancel = cancelticket.CancelTheTicket(bookingid, result.TotalCost);
                         if (cancel)
                         {
                             Console.WriteLine("You Cancelled Your Ticket Sucessfully....");

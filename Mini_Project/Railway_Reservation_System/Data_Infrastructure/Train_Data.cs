@@ -25,7 +25,7 @@ namespace Railway_Reservation_System.Data_Infrastructure
                     var reader = cmd.ExecuteReader();
                     while (reader.Read())
                     {
-                        
+
                         trains.Add(new Trains_Access
                         {
                             TrainID = (int)reader["TrainID"],
@@ -35,10 +35,8 @@ namespace Railway_Reservation_System.Data_Infrastructure
                             DestinationStation = reader["DestinationStation"].ToString(),
                             DepartureTime = (TimeSpan)reader["DepartureTime"],
                             ArrivalTime = (TimeSpan)reader["ArrivalTime"],
-                            TravelDate = (DateTime)reader["TravelDate"],
                             Duration = reader["Duration"].ToString(),
                             TotalSeats = (int)reader["TotalSeats"],
-                            AvailableSeats = (int)reader["AvailableSeats"],
                             Fare = (decimal)reader["Fare"],
                             TrainType = reader["TrainType"].ToString(),
                             Status = reader["Status"].ToString()
@@ -56,7 +54,7 @@ namespace Railway_Reservation_System.Data_Infrastructure
             }
         }
 
-       
+
         public void GetDataForAddTrain()
         {
             Trains_Access train = new Trains_Access();
@@ -74,13 +72,9 @@ namespace Railway_Reservation_System.Data_Infrastructure
             Console.WriteLine("Enter Arrival Time (HH:mm):");
             train.ArrivalTime = TimeSpan.Parse(Console.ReadLine());
             Console.WriteLine("Enter Travel Date (yyyy-MM-dd):");
-            train.TravelDate = DateTime.Parse(Console.ReadLine());
-            Console.WriteLine("Enter Duration:");
             train.Duration = Console.ReadLine();
             Console.WriteLine("Enter Total Seats:");
             train.TotalSeats = int.Parse(Console.ReadLine());
-            Console.WriteLine("Enter Available Seats:");
-            train.AvailableSeats = int.Parse(Console.ReadLine());
             Console.WriteLine("Enter Fare:");
             train.Fare = decimal.Parse(Console.ReadLine());
             Console.WriteLine("Enter Train Type:");
@@ -99,12 +93,12 @@ namespace Railway_Reservation_System.Data_Infrastructure
                 {
                     string query = @"INSERT INTO Trains 
                                 (TrainNumber, TrainName, SourceStation, DestinationStation,
-                                DepartureTime, ArrivalTime, TravelDate, Duration, TotalSeats,
-                                AvailableSeats, Fare, TrainType, Status, IsDeleted)
+                                DepartureTime, ArrivalTime, Duration, TotalSeats,
+                                Fare, TrainType, Status, IsDeleted)
                                 VALUES 
                                 (@TrainNumber, @TrainName, @SourceStation, @DestinationStation,
-                                @DepartureTime, @ArrivalTime, @TravelDate, @Duration, @TotalSeats,
-                                @AvailableSeats, @Fare, @TrainType, @Status, @IsDeleted)";
+                                @DepartureTime, @ArrivalTime, @Duration, @TotalSeats,
+                                @Fare, @TrainType, @Status, @IsDeleted)";
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@TrainNumber", train.TrainNumber);
@@ -113,10 +107,8 @@ namespace Railway_Reservation_System.Data_Infrastructure
                         cmd.Parameters.AddWithValue("@DestinationStation", train.DestinationStation);
                         cmd.Parameters.AddWithValue("@DepartureTime", train.DepartureTime);
                         cmd.Parameters.AddWithValue("@ArrivalTime", train.ArrivalTime);
-                        cmd.Parameters.AddWithValue("@TravelDate", train.TravelDate);
                         cmd.Parameters.AddWithValue("@Duration", train.Duration);
                         cmd.Parameters.AddWithValue("@TotalSeats", train.TotalSeats);
-                        cmd.Parameters.AddWithValue("@AvailableSeats", train.AvailableSeats);
                         cmd.Parameters.AddWithValue("@Fare", train.Fare);
                         cmd.Parameters.AddWithValue("@TrainType", train.TrainType);
                         cmd.Parameters.AddWithValue("@Status", train.Status);
@@ -125,14 +117,41 @@ namespace Railway_Reservation_System.Data_Infrastructure
                     }
                 }
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine($"Error While Adding Train {e.Message}");
             }
         }
 
+        public bool DeleteTrain(int trainid)
+        {
+            try
+            {
+                using (SqlConnection conn = db_connection.CreateConnection())
+                {
+                    string updateQuery = @"UPDATE Trains SET IsDeleted = 1 WHERE TrainID = @trainid";
+                    using (SqlCommand updateCmd = new SqlCommand(updateQuery, conn))
+                    {
+                        updateCmd.Parameters.AddWithValue("@trainid", trainid);
 
-       
+                        int rows_affected = updateCmd.ExecuteNonQuery();
+                        if (rows_affected > 0)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"Error while deleting train : {e.Message}");
+                return false;
+            }
 
 
 
@@ -142,5 +161,9 @@ namespace Railway_Reservation_System.Data_Infrastructure
 
 
 
+
+
+
+        }
     }
 }

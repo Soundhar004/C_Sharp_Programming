@@ -19,7 +19,7 @@ namespace Railway_Reservation_System.Templates
         public static string adminphone, adminemail;
         public static bool Admin_Login_Status = false;
         private static string adminpass;
-        public void AdminSignup()
+        public bool AdminSignup()
         {
             Console.Write("Enter admin Username: ");
             string adminname = Console.ReadLine();
@@ -32,17 +32,50 @@ namespace Railway_Reservation_System.Templates
             Console.Write("Enter User type (Passenger / Admin): ");
             string usertype = Console.ReadLine();
 
-            users_login.InsertData(adminname,phone,email,password,usertype,"admins");
-            
+            bool status = users_login.InsertData(adminname,phone,email,password,usertype,"admins");
+            if (status)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
-        public void AdminLogin()
+        public bool AdminLogin()
         {
             Console.WriteLine("Enter the Admin Username :  ");
             string username = Console.ReadLine();
             Console.WriteLine("Enter the Admin Password :  ");
             string password = Console.ReadLine();
             SelectData(username, password);
+            try
+            {
+                bool result = users_login.VerifyPassword(password, adminpass);
+                if (result)
+                {
+                    Console.WriteLine("Admin Logged in Successfully...");
+                    /*Console.WriteLine(AdminId);
+                    Console.WriteLine(adminname);
+                    Console.WriteLine(adminpass);*/
+                    Admin_Login_Status = true;
+                    return true;
+
+                }
+                else
+                {
+                    Console.WriteLine("Admin Login Failed.");
+                    Admin_Login_Status = false;
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"Something went wrong while Logging in : {e.Message}");
+                return false;
+            }
+
         }
 
 
@@ -68,29 +101,7 @@ namespace Railway_Reservation_System.Templates
                         adminemail = rd["Email"].ToString();
                     }
 
-                    try
-                    {
-                        bool result = users_login.VerifyPassword(password, adminpass);
-                        if (result)
-                        {
-                            Console.WriteLine("Admin Logged in Successfully...");
-                            /*Console.WriteLine(AdminId);
-                            Console.WriteLine(adminname);
-                            Console.WriteLine(adminpass);*/
-                            Admin_Login_Status = true;
-                        }
-                        else
-                        {
-                            Console.WriteLine("Admin Login Failed.");
-                            Console.WriteLine("Invalid Password or Username");
-                            Admin_Login_Status = false;
-                        }
-                    }
-                    catch (Exception e)
-                    {
-                        Console.WriteLine($"Something went wrong while Logging in : {e.Message}");
-                    }
-
+                   
                 }
                 else
                 {

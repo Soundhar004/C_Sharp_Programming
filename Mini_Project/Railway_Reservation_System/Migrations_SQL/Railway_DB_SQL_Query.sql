@@ -144,6 +144,8 @@ ADD CONSTRAINT Reservation_Train
 FOREIGN KEY (TrainId) REFERENCES Trains(TrainId);
 
 select * from Reservation
+SELECT * FROM Reservation WHERE IsDeleted = 0
+
 
 
 
@@ -172,6 +174,9 @@ CREATE TABLE TrainClasses (
     IsActive BIT DEFAULT 1                         -- 1 = Active, 0 = Inactive
 );
 
+DELETE FROM TrainClasses;
+
+
 SELECT * FROM TrainClasses WHERE TrainId = 1 AND ClassType = 'sleeper' AND IsActive = 1
 
 INSERT INTO TrainClasses(TrainId, ClassType, MaxSeats, AvailableSeats, CostPerSeat, IsActive) VALUES
@@ -189,6 +194,22 @@ ALTER TABLE Cancellations
 ADD CONSTRAINT Cancellations_Reservations
 FOREIGN KEY (BookingId) REFERENCES Reservation(BookingId);
 
+
+
+
 ---UPDATE TrainClasses 
 ---SET AvailableSeats = AvailableSeats + 20
 ---WHERE TrainId =  AND ClassType = @ClassType AND IsActive = 1";
+
+
+select * from Users
+
+select * from Admins
+
+select * from Trains 
+
+select * from Reservation
+
+select * from Cancellations
+
+select * from TrainClasses

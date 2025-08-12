@@ -21,7 +21,6 @@ namespace Railway_Reservation_System.Templates
 
         public static string Userid, user;
         public static string userphone, useremail;
-        public static bool Login_Status = false; 
         private static string pass;
         static void Main()
         {
@@ -30,7 +29,7 @@ namespace Railway_Reservation_System.Templates
         }
 
         /*UserSignup function*/
-        public void UserSignup()
+        public bool UserSignup()
         {
             Console.Write("Enter Username: ");
             string username = Console.ReadLine();
@@ -43,11 +42,18 @@ namespace Railway_Reservation_System.Templates
             Console.Write("Enter User type (Passenger / Admin): ");
             string usertype = Console.ReadLine();
 
-            InsertData(username, phone, email, password, usertype,"users");
-           
+            bool status = InsertData(username, phone, email, password, usertype,"users");
+            if (status)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
-        public void LoginValidate()
+        public bool LoginValidate()
         {
 
             Console.WriteLine("Enter the Username :  ");
@@ -56,10 +62,35 @@ namespace Railway_Reservation_System.Templates
             string password = Console.ReadLine();
 
             SelectData(username, password);
-         
+            try
+            {
+                bool result = VerifyPassword(password, pass);
+                if (result)
+                {
+                    Console.WriteLine("You Logged in Successfully...");
+                    /*Console.WriteLine($"Welcome {user}, Book Your Ticket and Enjoy Your Journey");*/
+                    /*Console.WriteLine(Userid);
+                    Console.WriteLine(user);
+                    Console.WriteLine(pass);*/
+                    return true;
+                }
+                else
+                {
+                    Console.WriteLine("Login Failed.");
+                    /*Console.WriteLine("Invalid Password or Username");*/
+                    
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"Something went wrong while Logging in : {e.Message}");
+                return false;
+            }
+
         }
 
-
+        
          public static bool VerifyPassword(string userpass, string dbpass)
          {
             bool result = BCrypt.Net.BCrypt.Verify(userpass, dbpass);
@@ -72,7 +103,6 @@ namespace Railway_Reservation_System.Templates
             try
             {
                 conn = db_connection.CreateConnection();
-               
                 string query = "select * from users where Username=@username";
                 command = new SqlCommand(query, conn);
                 command.Parameters.AddWithValue("@username",username);
@@ -90,40 +120,19 @@ namespace Railway_Reservation_System.Templates
                         useremail = rd["Email"].ToString();
                     }
 
-                    try
-                    {
-                        bool result = VerifyPassword(password, pass);
-                        if (result)
-                        {
-                            Console.WriteLine("You Logged in Successfully...");
-                            /*Console.WriteLine($"Welcome {user}, Book Your Ticket and Enjoy Your Journey");*/
-                            /*Console.WriteLine(Userid);
-                            Console.WriteLine(user);
-                            Console.WriteLine(pass);*/
-                            Login_Status = true;
-                        }
-                        else
-                        {
-                            Console.WriteLine("Login Failed.");
-                            Console.WriteLine("Invalid Password or Username");
-                            Login_Status = false;
-                        }
-                    }
-                    catch(Exception e)
-                    {
-                        Console.WriteLine($"Something went wrong while Logging in : {e.Message}");
-                    }
-
                 }
                 else
                 {
                     Console.WriteLine("No Data is there...");
+                    
                 }
+               
 
             }
             catch (SqlException e)
             {
                 Console.WriteLine($"Some Error.... : {e.Message}");
+                
             }
         }
 
@@ -135,7 +144,7 @@ namespace Railway_Reservation_System.Templates
             
         }
 
-        public static void InsertData(string username, string phone, string email, string password, string usertype, string table)
+        public static bool InsertData(string username, string phone, string email, string password, string usertype, string table)
         {
             try
             {
@@ -157,18 +166,21 @@ namespace Railway_Reservation_System.Templates
                 {
 
                     /*Console.WriteLine("Inserted Successfully......");*/
-                    Console.WriteLine("Registered Successfully.....");
-                    Console.WriteLine("Login to Use Your Application......");
+                    /*Console.WriteLine("Registered Successfully.....");
+                    Console.WriteLine("Login to Use Your Application......");*/
+                    return true;
                 }
                 else
                 {
                     /*Console.WriteLine("Something went wrong, It Can't able to insert.....");*/
-                    Console.WriteLine("Something went wrong while Registering!");
+                    /*Console.WriteLine("Something went wrong while Registering!");*/
+                    return false;
                 }
             }
             catch (Exception e)
             {
                 Console.WriteLine($"Error : {e.Message}");
+                return false;
             }
         }
 
