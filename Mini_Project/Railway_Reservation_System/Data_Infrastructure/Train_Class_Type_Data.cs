@@ -68,7 +68,7 @@ namespace Railway_Reservation_System.Data_Infrastructure
 
                             if (!reader.HasRows)
                             {
-                                Console.WriteLine("No seat data found for this Train ID.");
+                                Console.WriteLine("No seat data found for this Train ID or Train is not there for this ID.");
                             }
                             else
                             {

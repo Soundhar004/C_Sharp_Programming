@@ -103,18 +103,19 @@ namespace Railway_Reservation_System.Templates
                         foreach (var t in trains)
                         {
                             Console.WriteLine("---------------------------------------------------------");
-                            Console.WriteLine($"Train Id : {t.TrainID},\n" +
-                                $"Train No : {t.TrainNumber}, \n" +
-                                $"Train Name: {t.TrainName},\n" +
-                                $"Source Station  : {t.SourceStation}, \n" +
+                            Console.WriteLine(
+                                $"Train Id            : {t.TrainID},\n" +
+                                $"Train No            : {t.TrainNumber}, \n" +
+                                $"Train Name          : {t.TrainName},\n" +
+                                $"Source Station      : {t.SourceStation}, \n" +
                                 $"Destination Station : {t.DestinationStation}, \n" +
-                                $"Departure Time : {t.DepartureTime}, \n" +
-                                $"Arrival Time : {t.ArrivalTime}, \n" +
-                                $"Duration : {t.Duration}, \n" +
-                                $"Total Seats : {t.TotalSeats}, \n" +
-                                $"Fare : {t.Fare}, \n" +
-                                $"Train Type : {t.TrainType}, \n" +
-                                $"Status : {t.Status}\n");
+                                $"Departure Time      : {t.DepartureTime}, \n" +
+                                $"Arrival Time        : {t.ArrivalTime}, \n" +
+                                $"Duration            : {t.Duration}, \n" +
+                                $"Total Seats         : {t.TotalSeats}, \n" +
+                                $"Fare                : {t.Fare}, \n" +
+                                $"Train Type          : {t.TrainType}, \n" +
+                                $"Status              : {t.Status}\n");
                         }
                         break;
 

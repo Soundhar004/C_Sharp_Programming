@@ -8,6 +8,7 @@ using System.Data.SqlClient;
 using Railway_Reservation_System.Templates;
 using BCrypt.Net;
 using System.Security.Cryptography;
+using System.Text.RegularExpressions;
 
 
 
@@ -34,7 +35,7 @@ namespace Railway_Reservation_System.Templates
             Console.Write("Enter Username: ");
             string username = Console.ReadLine();
             Console.Write("Enter Phone: ");
-            string phone = Console.ReadLine();
+            string phone = GetValidMobileNumber();
             Console.Write("Enter Email: ");
             string email = Console.ReadLine();
             Console.Write("Enter Password: ");
@@ -67,18 +68,12 @@ namespace Railway_Reservation_System.Templates
                 bool result = VerifyPassword(password, pass);
                 if (result)
                 {
-                    Console.WriteLine("You Logged in Successfully...");
-                    /*Console.WriteLine($"Welcome {user}, Book Your Ticket and Enjoy Your Journey");*/
-                    /*Console.WriteLine(Userid);
-                    Console.WriteLine(user);
-                    Console.WriteLine(pass);*/
+                    Console.WriteLine("\nYou Logged in Successfully...");
                     return true;
                 }
                 else
                 {
-                    Console.WriteLine("Login Failed.");
-                    /*Console.WriteLine("Invalid Password or Username");*/
-                    
+                    Console.WriteLine("\nLogin Failed.");
                     return false;
                 }
             }
@@ -126,8 +121,6 @@ namespace Railway_Reservation_System.Templates
                     Console.WriteLine("No Data is there...");
                     
                 }
-               
-
             }
             catch (SqlException e)
             {
@@ -185,6 +178,24 @@ namespace Railway_Reservation_System.Templates
         }
 
 
+        static string GetValidMobileNumber()
+        {
+            string pattern = @"^[6-9]\d{9}$";
+
+            while (true)
+            {
+                string input = Console.ReadLine();
+
+                if (Regex.IsMatch(input, pattern))
+                {
+                    return input;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid mobile number. Please enter a 10-digit number starting with 6, 7, 8, or 9.");
+                }
+            }
+        }
 
 
     }

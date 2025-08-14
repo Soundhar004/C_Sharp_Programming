@@ -73,12 +73,12 @@ namespace Railway_Reservation_System
 
                         if (userlogin.UserSignup())
                         {
-                            Console.WriteLine("Registered Successfully.....");
+                            Console.WriteLine("\nRegistered Successfully.....");
                             Console.WriteLine("Login to Use Your Application......");
                         }
                         else
                         {
-                            Console.WriteLine("Something went wrong while Registering!");
+                            Console.WriteLine("\nSomething went wrong while Registering!");
                         }
                         break;
 

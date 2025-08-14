@@ -55,7 +55,7 @@ namespace Railway_Reservation_System.Templates
                 bool result = users_login.VerifyPassword(password, adminpass);
                 if (result)
                 {
-                    Console.WriteLine("Admin Logged in Successfully...");
+                    Console.WriteLine("\nAdmin Logged in Successfully...");
                     /*Console.WriteLine(AdminId);
                     Console.WriteLine(adminname);
                     Console.WriteLine(adminpass);*/
@@ -65,7 +65,7 @@ namespace Railway_Reservation_System.Templates
                 }
                 else
                 {
-                    Console.WriteLine("Admin Login Failed.");
+                    Console.WriteLine("\nAdmin Login Failed.");
                     Admin_Login_Status = false;
                     return false;
                 }
