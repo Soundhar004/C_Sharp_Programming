@@ -1,0 +1,5 @@
+C:\Users\soundhark\Documents\Project_C#\ASP_Learnings\Project_Electricity\Electricity_Library\bin\Debug\Electricity_Library.dll
+C:\Users\soundhark\Documents\Project_C#\ASP_Learnings\Project_Electricity\Electricity_Library\bin\Debug\Electricity_Library.pdb
+C:\Users\soundhark\Documents\Project_C#\ASP_Learnings\Project_Electricity\Electricity_Library\obj\Debug\Electricity_Library.csproj.CoreCompileInputs.cache
+C:\Users\soundhark\Documents\Project_C#\ASP_Learnings\Project_Electricity\Electricity_Library\obj\Debug\Electricity_Library.dll
+C:\Users\soundhark\Documents\Project_C#\ASP_Learnings\Project_Electricity\Electricity_Library\obj\Debug\Electricity_Library.pdb
