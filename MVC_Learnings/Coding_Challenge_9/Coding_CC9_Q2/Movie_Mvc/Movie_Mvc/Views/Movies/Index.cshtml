@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Movie_Mvc.Models.Movie>
+
+@{
+    ViewBag.Title = "Movies List";
+}
+
+<h2 style="margin-bottom: 20px;">🎬 Movies</h2>
+
+<div style="margin-bottom: 20px;">
+    <a href="@Url.Action("Create", "Movies")" style="text-decoration:none; background-color:#4CAF50; color:white; padding:8px 12px; border-radius:4px;">➕ Add New Movie</a>
+</div>
+
+<!-- Filtering Section -->
+<div style="margin-bottom: 20px;">
+    <form method="get" action="@Url.Action("ByYear", "Movies")" style="display:inline-block; margin-right:20px;">
+        <label for="year">Filter by Year:</label>
+        <input type="number" name="year" id="year" placeholder="e.g. 2022" required style="padding:4px; width:120px;" />
+        <button type="submit" style="padding:4px 8px;">Search</button>
+    </form>
+
+    <form method="get" action="@Url.Action("ByDirector", "Movies")" style="display:inline-block;">
+        <label for="directorName">Filter by Director:</label>
+        <input type="text" name="directorName" id="directorName" placeholder="e.g. Nolan" required style="padding:4px; width:140px;" />
+        <button type="submit" style="padding:4px 8px;">Search</button>
+    </form>
+</div>
+
+<!-- Movies Table -->
+<table style="width:100%; border-collapse: collapse;">
+    <thead style="background-color:#f2f2f2;">
+        <tr>
+            <th style="text-align:left; padding:8px;">ID</th>
+            <th style="text-align:left; padding:8px;">Name</th>
+            <th style="text-align:left; padding:8px;">Director</th>
+            <th style="text-align:left; padding:8px;">Release Date</th>
+            <th style="text-align:left; padding:8px;">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr style="border-bottom:1px solid #ddd;">
+                <td style="padding:8px;">@item.Mid</td>
+                <td style="padding:8px;">@item.Moviename</td>
+                <td style="padding:8px;">@item.DirectorName</td>
+                <td style="padding:8px;">@item.DateofRelease.ToShortDateString()</td>
+                <td style="padding:8px;">
+                    <a href="@Url.Action("Edit", "Movies", new { id = item.Mid })" style="margin-right:8px;">✏️ Edit</a>
+                    <a href="@Url.Action("Delete", "Movies", new { id = item.Mid })" style="color:red;">🗑️ Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

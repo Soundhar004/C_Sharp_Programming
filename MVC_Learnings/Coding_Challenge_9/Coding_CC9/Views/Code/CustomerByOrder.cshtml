@@ -1,0 +1,22 @@
+﻿@model Coding_CC9.Customer
+
+<h2>Order Details for ID : 10248</h2>
+
+@if (Model != null)
+{
+<ul>
+    <li><strong>Customer ID:</strong> @Model.CustomerID</li>
+    <li><strong>Company Name:</strong> @Model.CompanyName</li>
+    <li><strong>Contact Name:</strong> @Model.ContactName</li>
+    <li><strong>Contact Title:</strong> @Model.ContactTitle</li>
+    <li><strong>Address:</strong> @Model.Address</li>
+    <li><strong>City:</strong> @Model.City</li>
+    <li><strong>Region:</strong> @Model.Region</li>
+    <li><strong>Postal Code:</strong> @Model.PostalCode</li>
+    <li><strong>Country:</strong> @Model.Country</li>
+    <li><strong>Phone:</strong> @Model.Phone</li>
+    <li><strong>Fax:</strong> @Model.Fax</li>
+</ul> }
+            else
+            {
+<p>No customer found for this order.</p>}
