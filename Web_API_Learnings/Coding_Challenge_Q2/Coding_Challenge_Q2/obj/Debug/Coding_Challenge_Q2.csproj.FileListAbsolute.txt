@@ -1,2 +1,0 @@
-C:\Users\soundhark\Documents\Project_C#\Web_API_Learnings\Coding_Challenge_Q2\Coding_Challenge_Q2\obj\Debug\Coding_Challenge_Q2.csproj.AssemblyReference.cache
-C:\Users\soundhark\Documents\Project_C#\Web_API_Learnings\Coding_Challenge_Q2\Coding_Challenge_Q2\obj\Debug\Coding_Challenge_Q2.csproj.CoreCompileInputs.cache
